@@ -1,4 +1,4 @@
-import { Home, Calendar, FileText, Users, Calculator, Settings, LogOut } from "lucide-react";
+import { Home, Calendar, FileText, Users, Calculator, Settings, LogOut, Bell } from "lucide-react";
 import { useState } from "react";
 
 interface NavigationItem {
@@ -32,11 +32,33 @@ export default function UniversitySidebar() {
     <div className="fixed left-0 top-0 h-screen w-[160px] p-4">
       <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col">
         {/* Top Section - University Branding */}
-        <div className="pt-10 px-6 flex flex-col items-center">
+        <div className="pt-10 px-6 flex flex-col items-center mb-8">
           {/* University Logo - Letter A with green gradient */}
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center mb-6">
             <span className="text-white text-3xl font-bold">A</span>
           </div>
+          
+          {/* Notification Button */}
+          <button
+            onClick={() => {
+              setActiveItem("notifications");
+              console.log("Notifications clicked");
+            }}
+            data-testid="button-notifications"
+            className="relative group transition-transform duration-200 hover:scale-110"
+            aria-label="Notifications"
+          >
+            {activeItem === "notifications" && (
+              <div className="absolute inset-0 -m-3 bg-primary/10 rounded-full" />
+            )}
+            <Bell
+              className={`w-6 h-6 transition-colors duration-200 relative z-10 ${
+                activeItem === "notifications"
+                  ? "text-primary"
+                  : "text-muted-foreground group-hover:text-primary"
+              }`}
+            />
+          </button>
         </div>
 
         {/* Middle Section - Navigation Icons */}
