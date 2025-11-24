@@ -7,7 +7,7 @@ export default function DashboardContent() {
       {/* Orders Section */}
       <div className="h-80 p-6 bg-rose-100 dark:bg-rose-900/30 rounded-[40px] inline-flex justify-start items-end gap-6 overflow-auto w-[calc(100vw-160px-32px)]">
         {/* Ordens Abertas */}
-        <div className="w-52 p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
+        <div className="w-52 h-full p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
           <div className="inline-flex justify-start items-center gap-2">
             <ClipboardList className="w-5 h-5 text-black" />
             <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-open">Ordens Abertas</div>
@@ -21,7 +21,7 @@ export default function DashboardContent() {
         </div>
 
         {/* Ordens Em Execução */}
-        <div className="w-52 p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
+        <div className="w-52 h-full p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
           <div className="inline-flex justify-start items-center gap-2">
             <Zap className="w-5 h-5 text-black" />
             <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-execution">Ordens Em Execução</div>
@@ -35,7 +35,7 @@ export default function DashboardContent() {
         </div>
 
         {/* Ordens Finalizadas */}
-        <div className="w-52 p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
+        <div className="w-52 h-full p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
           <div className="inline-flex justify-start items-center gap-2">
             <CheckCircle2 className="w-5 h-5 text-black" />
             <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-finished">Ordens Finalizadas</div>
