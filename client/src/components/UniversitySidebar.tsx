@@ -36,7 +36,6 @@ export default function UniversitySidebar() {
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center mb-4">
             <span className="text-white text-3xl font-bold">A</span>
           </div>
-          <h1 className="text-foreground font-semibold text-lg">OAK University</h1>
         </div>
 
         {/* Middle Section - Navigation Icons */}
