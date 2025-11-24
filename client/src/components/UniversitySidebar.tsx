@@ -1,4 +1,4 @@
-import { Home, Search, Users, BarChart3, Settings, LogOut } from "lucide-react";
+import { Home, Calendar, FileText, Users, Calculator, Settings, LogOut } from "lucide-react";
 import { useState } from "react";
 
 interface NavigationItem {
@@ -9,9 +9,10 @@ interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   { icon: Home, label: "Home", id: "home" },
-  { icon: Search, label: "Search", id: "search" },
+  { icon: Calendar, label: "Calendar", id: "calendar" },
+  { icon: FileText, label: "Document", id: "document" },
   { icon: Users, label: "Users", id: "users" },
-  { icon: BarChart3, label: "Analytics", id: "analytics" },
+  { icon: Calculator, label: "Calculator", id: "calculator" },
 ];
 
 const bottomItems: NavigationItem[] = [
