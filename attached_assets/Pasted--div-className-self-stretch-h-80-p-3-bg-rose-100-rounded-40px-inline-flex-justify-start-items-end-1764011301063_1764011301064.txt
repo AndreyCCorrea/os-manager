@@ -1,0 +1,47 @@
+<div className="self-stretch h-80 p-3 bg-rose-100 rounded-[40px] inline-flex justify-start items-end gap-3 overflow-hidden">
+  <div className="w-52 p-3 bg-stone-400 rounded-3xl inline-flex flex-col justify-center items-start gap-10">
+    <div className="inline-flex justify-start items-center gap-1">
+      <div className="w-5 h-5 relative">
+        <div className="w-4 h-3 left-[1.99px] top-[4.17px] absolute outline outline-[1.33px] outline-offset-[-0.67px] outline-black" />
+        <div className="w-[5px] h-[5px] left-[7.50px] top-[7.50px] absolute outline outline-[1.33px] outline-offset-[-0.67px] outline-black" />
+      </div>
+      <div className="justify-start text-black text-sm font-normal font-['Inter']">Ordens Abertas</div>
+    </div>
+    <div className="self-stretch inline-flex justify-between items-center">
+      <div className="justify-start text-black text-2xl font-semibold font-['Inter']">1200</div>
+      <div className="w-8 h-8 relative bg-white rounded-2xl">
+        <div className="w-3 h-2 left-[24px] top-[13.93px] absolute origin-top-left rotate-[135deg] bg-black" />
+      </div>
+    </div>
+  </div>
+  <div className="w-52 p-3 bg-stone-400 rounded-3xl inline-flex flex-col justify-center items-start gap-10">
+    <div className="inline-flex justify-start items-center gap-1">
+      <div className="w-5 h-5 relative">
+        <div className="w-3.5 h-3.5 left-[2.50px] top-[2.50px] absolute outline outline-[1.33px] outline-offset-[-0.67px] outline-black" />
+        <div className="w-[2.50px] h-1.5 left-[10px] top-[5.83px] absolute outline outline-[1.33px] outline-offset-[-0.67px] outline-black" />
+      </div>
+      <div className="justify-start text-black text-sm font-normal font-['Inter']">Ordens Em Execução</div>
+    </div>
+    <div className="self-stretch inline-flex justify-between items-center">
+      <div className="justify-start text-black text-2xl font-semibold font-['Inter']">980</div>
+      <div className="w-8 h-8 relative bg-white rounded-2xl">
+        <div className="w-3 h-2 left-[24px] top-[13.93px] absolute origin-top-left rotate-[135deg] bg-black" />
+      </div>
+    </div>
+  </div>
+  <div className="w-52 p-3 bg-stone-400 rounded-3xl inline-flex flex-col justify-center items-start gap-10">
+    <div className="inline-flex justify-start items-center gap-1">
+      <div className="w-5 h-5 relative">
+        <div className="w-[0.70px] h-[0.56px] left-[10.06px] top-[19.29px] absolute" />
+        <div className="w-4 h-3 left-[1.66px] top-[3.89px] absolute bg-black" />
+      </div>
+      <div className="justify-start text-black text-sm font-normal font-['Inter']">Ordens Finalizadas</div>
+    </div>
+    <div className="self-stretch inline-flex justify-between items-center">
+      <div className="justify-start text-black text-2xl font-semibold font-['Inter']">730</div>
+      <div className="w-8 h-8 relative bg-white rounded-2xl">
+        <div className="w-3 h-2 left-[24px] top-[13.93px] absolute origin-top-left rotate-[135deg] bg-black" />
+      </div>
+    </div>
+  </div>
+</div>

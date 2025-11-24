@@ -1,56 +1,59 @@
 import { Card } from "@/components/ui/card";
-import { Users, BookOpen, GraduationCap, TrendingUp } from "lucide-react";
-
-interface StatCardProps {
-  title: string;
-  value: string;
-  icon: typeof Users;
-  trend?: string;
-}
-
-function StatCard({ title, value, icon: Icon, trend }: StatCardProps) {
-  return (
-    <Card className="p-6 hover-elevate">
-      <div className="flex items-start justify-between">
-        <div className="space-y-2">
-          <p className="text-sm text-muted-foreground">{title}</p>
-          <p className="text-3xl font-bold text-foreground" data-testid={`text-${title.toLowerCase().replace(/\s+/g, '-')}`}>{value}</p>
-          {trend && (
-            <p className="text-xs text-primary flex items-center gap-1">
-              <TrendingUp className="w-3 h-3" />
-              {trend}
-            </p>
-          )}
-        </div>
-        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-          <Icon className="w-6 h-6 text-primary" />
-        </div>
-      </div>
-    </Card>
-  );
-}
 
 export default function DashboardContent() {
-  const stats = [
-    { title: "Total Students", value: "12,458", icon: Users, trend: "+12% from last month" },
-    { title: "Active Courses", value: "342", icon: BookOpen, trend: "+8% from last month" },
-    { title: "Faculty Members", value: "856", icon: GraduationCap, trend: "+5% from last month" },
-    { title: "Completion Rate", value: "94.2%", icon: TrendingUp, trend: "+2.4% from last month" },
-  ];
-
   return (
     <div className="p-8 space-y-6">
-      {/* Welcome Section */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-foreground mb-2" data-testid="text-welcome">Welcome Back!</h1>
-        <p className="text-muted-foreground">Here's what's happening at OAK University today.</p>
-      </div>
+      {/* Orders Section */}
+      <div className="h-80 p-3 bg-rose-100 dark:bg-rose-900/30 rounded-[40px] inline-flex justify-start items-end gap-3 overflow-auto w-full">
+        {/* Ordens Abertas */}
+        <div className="w-52 p-3 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
+          <div className="inline-flex justify-start items-center gap-1">
+            <div className="w-5 h-5 relative">
+              <div className="w-4 h-3 left-[1.99px] top-[4.17px] absolute border border-black" />
+              <div className="w-[5px] h-[5px] left-[7.50px] top-[7.50px] absolute border border-black" />
+            </div>
+            <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-open">Ordens Abertas</div>
+          </div>
+          <div className="self-stretch inline-flex justify-between items-center">
+            <div className="text-black dark:text-white text-2xl font-semibold" data-testid="text-orders-open-count">1200</div>
+            <div className="w-8 h-8 relative bg-white rounded-2xl flex items-center justify-center">
+              <div className="w-3 h-2 bg-black transform rotate-45" />
+            </div>
+          </div>
+        </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat, index) => (
-          <StatCard key={index} {...stat} />
-        ))}
+        {/* Ordens Em Execução */}
+        <div className="w-52 p-3 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
+          <div className="inline-flex justify-start items-center gap-1">
+            <div className="w-5 h-5 relative">
+              <div className="w-3.5 h-3.5 left-[2.50px] top-[2.50px] absolute border border-black" />
+              <div className="w-[2.50px] h-1.5 left-[10px] top-[5.83px] absolute border border-black" />
+            </div>
+            <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-execution">Ordens Em Execução</div>
+          </div>
+          <div className="self-stretch inline-flex justify-between items-center">
+            <div className="text-black dark:text-white text-2xl font-semibold" data-testid="text-orders-execution-count">980</div>
+            <div className="w-8 h-8 relative bg-white rounded-2xl flex items-center justify-center">
+              <div className="w-3 h-2 bg-black transform rotate-45" />
+            </div>
+          </div>
+        </div>
+
+        {/* Ordens Finalizadas */}
+        <div className="w-52 p-3 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
+          <div className="inline-flex justify-start items-center gap-1">
+            <div className="w-5 h-5 relative">
+              <div className="w-4 h-3 left-[1.66px] top-[3.89px] absolute bg-black" />
+            </div>
+            <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-finished">Ordens Finalizadas</div>
+          </div>
+          <div className="self-stretch inline-flex justify-between items-center">
+            <div className="text-black dark:text-white text-2xl font-semibold" data-testid="text-orders-finished-count">730</div>
+            <div className="w-8 h-8 relative bg-white rounded-2xl flex items-center justify-center">
+              <div className="w-3 h-2 bg-black transform rotate-45" />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Recent Activity Section */}
