@@ -28,12 +28,12 @@ export default function UniversitySidebar() {
   };
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-[280px] p-4">
+    <div className="fixed left-0 top-0 h-screen w-[220px] p-4">
       <div className="h-full bg-white dark:bg-card rounded-[24px] shadow-lg flex flex-col">
         {/* Top Section - University Branding */}
         <div className="pt-10 px-6 flex flex-col items-center">
           {/* University Logo - Letter A with green gradient */}
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center mb-4">
             <span className="text-white text-3xl font-bold">A</span>
           </div>
         </div>
