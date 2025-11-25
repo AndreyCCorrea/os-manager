@@ -49,7 +49,7 @@ export default function DashboardContent() {
         </div>
       </div>
       {/* Services Section */}
-      <div className="inline-flex justify-end items-stretch gap-3 h-[calc(100vh-320px-48px-32px)]">
+      <div className="inline-flex justify-end items-end gap-3 h-[calc(100vh-320px-48px-32px)]">
         <div className="grid grid-cols-2 grid-rows-2 gap-3 h-full w-auto aspect-square">
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
