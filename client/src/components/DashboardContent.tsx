@@ -3,7 +3,7 @@ import { ClipboardList, Zap, CheckCircle2, TrendingUp } from "lucide-react";
 
 export default function DashboardContent() {
   return (
-    <div className="pr-4 py-4 space-y-3 h-screen">
+    <div className="pr-4 pt-4 pb-4 space-y-3 h-screen">
       {/* Orders Section */}
       <div className="h-80 p-6 bg-rose-100 dark:bg-rose-900/30 rounded-[40px] inline-flex justify-start items-end gap-3 overflow-auto w-full">
         {/* Ordens Abertas */}
@@ -50,8 +50,8 @@ export default function DashboardContent() {
       </div>
       {/* Services Section */}
       <div 
-        className="inline-flex justify-end items-stretch gap-3 h-[calc(100vh-320px-48px-32px)]"
-        style={{ '--services-height': 'calc(100vh - 320px - 48px - 32px)' } as React.CSSProperties}
+        className="inline-flex justify-end items-stretch gap-3 h-[calc(100vh-16px-16px-320px-12px)]"
+        style={{ '--services-height': 'calc(100vh - 16px - 16px - 320px - 12px)' } as React.CSSProperties}
       >
         <div 
           className="grid grid-cols-2 grid-rows-2 gap-3"
