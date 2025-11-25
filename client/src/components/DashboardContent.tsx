@@ -49,26 +49,29 @@ export default function DashboardContent() {
         </div>
       </div>
 
-      {/* Recent Activity Section */}
-      <div className="mt-8">
-        <h2 className="text-xl font-semibold text-foreground mb-4">Recent Activity</h2>
-        <Card className="p-6">
-          <div className="space-y-4">
-            {[
-              { action: "New student enrollment", department: "Computer Science", time: "2 hours ago" },
-              { action: "Course updated", department: "Mathematics", time: "5 hours ago" },
-              { action: "Faculty meeting scheduled", department: "Engineering", time: "1 day ago" },
-            ].map((activity, index) => (
-              <div key={index} className="flex items-center justify-between py-3 border-b last:border-b-0">
-                <div>
-                  <p className="text-sm font-medium text-foreground">{activity.action}</p>
-                  <p className="text-xs text-muted-foreground">{activity.department}</p>
-                </div>
-                <p className="text-xs text-muted-foreground">{activity.time}</p>
-              </div>
-            ))}
+      {/* Services Section */}
+      <div className="self-stretch self-stretch inline-flex justify-end items-center gap-6">
+        <div className="flex-1 self-stretch inline-flex flex-col justify-center items-center gap-6">
+          <div className="self-stretch flex-1 inline-flex justify-start items-center gap-6">
+            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
+            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
           </div>
-        </Card>
+          <div className="self-stretch flex-1 inline-flex justify-start items-start gap-6">
+            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
+            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
+          </div>
+        </div>
+        <div className="flex-1 self-stretch p-8 bg-red-100 rounded-[40px] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
+          <div className="self-stretch inline-flex justify-between items-center">
+            <div className="inline-flex flex-col justify-start items-start">
+              <div className="justify-start text-black text-2xl font-semibold font-['Inter']">Próximos Serviços</div>
+              <div className="justify-start text-black text-sm font-normal font-['Inter']">Agendamento dos próximos serviços</div>
+            </div>
+            <div className="p-3 bg-white rounded-3xl flex justify-center items-center gap-2.5">
+              <div className="justify-start text-black text-sm font-normal font-['Inter']">Ver Todos</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
