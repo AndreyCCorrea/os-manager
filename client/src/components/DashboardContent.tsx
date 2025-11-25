@@ -53,12 +53,12 @@ export default function DashboardContent() {
       <div className="inline-flex justify-end items-stretch gap-6 h-[calc(100vh-320px-48px-32px)]">
         <div className="flex-[0.8] inline-flex flex-col justify-center items-center gap-6">
           <div className="self-stretch flex-1 inline-flex justify-start items-center gap-6">
-            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
-            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
+            <div className="flex-1 aspect-square p-2.5 bg-red-100 rounded-[40px]" />
+            <div className="flex-1 aspect-square p-2.5 bg-red-100 rounded-[40px]" />
           </div>
           <div className="self-stretch flex-1 inline-flex justify-start items-start gap-6">
-            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
-            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
+            <div className="flex-1 aspect-square p-2.5 bg-red-100 rounded-[40px]" />
+            <div className="flex-1 aspect-square p-2.5 bg-red-100 rounded-[40px]" />
           </div>
         </div>
         <div className="flex-[1.2] p-8 bg-red-100 rounded-[40px] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
