@@ -3,9 +3,9 @@ import { ClipboardList, Zap, CheckCircle2, TrendingUp } from "lucide-react";
 
 export default function DashboardContent() {
   return (
-    <div className="p-4 space-y-6">
+    <div className="p-4 space-y-3">
       {/* Orders Section */}
-      <div className="h-80 p-6 bg-rose-100 dark:bg-rose-900/30 rounded-[40px] inline-flex justify-start items-end gap-6 overflow-auto w-[calc(100vw-160px-32px)]">
+      <div className="h-80 p-6 bg-rose-100 dark:bg-rose-900/30 rounded-[40px] inline-flex justify-start items-end gap-3 overflow-auto w-[calc(100vw-160px-32px)]">
         {/* Ordens Abertas */}
         <div className="w-52 p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
           <div className="inline-flex justify-start items-center gap-2">
@@ -50,8 +50,8 @@ export default function DashboardContent() {
       </div>
 
       {/* Services Section */}
-      <div className="inline-flex justify-end items-stretch gap-6 h-[calc(100vh-320px-48px-32px)]">
-        <div className="grid grid-cols-2 grid-rows-2 gap-6 h-full w-auto aspect-square">
+      <div className="inline-flex justify-end items-stretch gap-3 h-[calc(100vh-320px-48px-32px)]">
+        <div className="grid grid-cols-2 grid-rows-2 gap-3 h-full w-auto aspect-square">
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
