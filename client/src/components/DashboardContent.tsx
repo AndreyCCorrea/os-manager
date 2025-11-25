@@ -50,8 +50,8 @@ export default function DashboardContent() {
       </div>
 
       {/* Services Section */}
-      <div className="self-stretch self-stretch inline-flex justify-end items-center gap-6">
-        <div className="flex-1 self-stretch inline-flex flex-col justify-center items-center gap-6">
+      <div className="inline-flex justify-end items-stretch gap-6 h-[calc(100vh-320px-48px-32px)]">
+        <div className="flex-[0.8] inline-flex flex-col justify-center items-center gap-6">
           <div className="self-stretch flex-1 inline-flex justify-start items-center gap-6">
             <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
             <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
@@ -61,7 +61,7 @@ export default function DashboardContent() {
             <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
           </div>
         </div>
-        <div className="flex-1 self-stretch p-8 bg-red-100 rounded-[40px] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
+        <div className="flex-[1.2] p-8 bg-red-100 rounded-[40px] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
           <div className="self-stretch inline-flex justify-between items-center">
             <div className="inline-flex flex-col justify-start items-start">
               <div className="justify-start text-black text-2xl font-semibold font-['Inter']">Próximos Serviços</div>
