@@ -5,7 +5,7 @@ export default function DashboardContent() {
   return (
     <div className="p-4 space-y-3 pl-[0px] pr-[0px] pt-[16px] pb-[16px] mt-[0px] mb-[0px]">
       {/* Orders Section */}
-      <div className="h-80 p-6 bg-rose-100 dark:bg-rose-900/30 rounded-[40px] inline-flex justify-start items-end gap-3 overflow-auto w-[calc(100vw-160px-32px)]">
+      <div className="h-80 p-6 bg-rose-100 dark:bg-rose-900/30 rounded-[40px] inline-flex justify-start items-end gap-3 overflow-auto w-full">
         {/* Ordens Abertas */}
         <div className="w-52 p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
           <div className="inline-flex justify-start items-center gap-2">
