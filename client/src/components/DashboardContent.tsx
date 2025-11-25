@@ -3,7 +3,7 @@ import { ClipboardList, Zap, CheckCircle2, TrendingUp } from "lucide-react";
 
 export default function DashboardContent() {
   return (
-    <div className="pr-4 pt-4 pb-4 space-y-3 h-screen">
+    <div className="pr-4 pt-4 pb-4 space-y-3 h-screen text-right">
       {/* Orders Section */}
       <div className="h-80 p-6 bg-rose-100 dark:bg-rose-900/30 rounded-[40px] inline-flex justify-start items-end gap-3 overflow-auto w-full">
         {/* Ordens Abertas */}
