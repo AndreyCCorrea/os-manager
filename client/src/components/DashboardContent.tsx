@@ -50,26 +50,26 @@ export default function DashboardContent() {
       </div>
 
       {/* Services Section */}
-      <div className="self-stretch self-stretch inline-flex justify-end items-center gap-6">
-        <div className="flex-1 self-stretch inline-flex flex-col justify-center items-center gap-6">
-          <div className="self-stretch flex-1 inline-flex justify-start items-center gap-6">
-            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
-            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
+      <div className="self-stretch min-h-[400px] inline-flex justify-end items-center gap-6">
+        <div className="flex-1 h-full inline-flex flex-col justify-center items-center gap-6">
+          <div className="self-stretch flex-1 min-h-[180px] inline-flex justify-start items-center gap-6">
+            <div className="flex-1 h-full p-2.5 bg-red-100 dark:bg-red-900/30 rounded-[40px]" />
+            <div className="flex-1 h-full p-2.5 bg-red-100 dark:bg-red-900/30 rounded-[40px]" />
           </div>
-          <div className="self-stretch flex-1 inline-flex justify-start items-start gap-6">
-            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
-            <div className="flex-1 self-stretch p-2.5 bg-red-100 rounded-[40px]" />
+          <div className="self-stretch flex-1 min-h-[180px] inline-flex justify-start items-start gap-6">
+            <div className="flex-1 h-full p-2.5 bg-red-100 dark:bg-red-900/30 rounded-[40px]" />
+            <div className="flex-1 h-full p-2.5 bg-red-100 dark:bg-red-900/30 rounded-[40px]" />
           </div>
         </div>
-        <div className="flex-1 self-stretch p-8 bg-red-100 rounded-[40px] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
+        <div className="flex-1 h-full p-8 bg-red-100 dark:bg-red-900/30 rounded-[40px] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
           <div className="self-stretch inline-flex justify-between items-center">
             <div className="inline-flex flex-col justify-start items-start">
-              <div className="justify-start text-black text-2xl font-semibold font-['Inter']">Próximos Serviços</div>
-              <div className="justify-start text-black text-sm font-normal font-['Inter']">Agendamento dos próximos serviços</div>
+              <div className="justify-start text-black dark:text-white text-2xl font-semibold">Próximos Serviços</div>
+              <div className="justify-start text-black dark:text-white text-sm font-normal">Agendamento dos próximos serviços</div>
             </div>
-            <div className="p-3 bg-white rounded-3xl flex justify-center items-center gap-2.5">
-              <div className="justify-start text-black text-sm font-normal font-['Inter']">Ver Todos</div>
-            </div>
+            <button className="p-3 bg-white rounded-3xl flex justify-center items-center gap-2.5 hover-elevate active-elevate-2" data-testid="button-view-all">
+              <div className="justify-start text-black text-sm font-normal">Ver Todos</div>
+            </button>
           </div>
         </div>
       </div>
