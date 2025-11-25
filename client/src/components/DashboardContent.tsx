@@ -54,8 +54,8 @@ export default function DashboardContent() {
         style={{ '--services-height': 'calc(100vh - 16px - 16px - 320px - 12px)' } as React.CSSProperties}
       >
         <div 
-          className="grid grid-cols-2 grid-rows-2 gap-3"
-          style={{ height: 'var(--services-height)', width: 'var(--services-height)' } as React.CSSProperties}
+          className="grid grid-cols-2 grid-rows-2 gap-3 flex-1"
+          style={{ height: 'var(--services-height)' } as React.CSSProperties}
         >
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
