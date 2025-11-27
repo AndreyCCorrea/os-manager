@@ -46,7 +46,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         {/* Top Section - University Branding */}
         <div className={`pt-10 flex flex-col mb-8 ${sidebarPadding}`}>
           {/* University Logo - Letter A with green gradient */}
-          <div className={`${iconColumnWidth} h-12 flex items-center justify-center mb-6`}>
+          <div className={`${iconColumnWidth} h-12 flex items-center justify-center mb-2`}>
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center flex-shrink-0">
               <span className="text-white text-lg font-bold">A</span>
             </div>
