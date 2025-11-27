@@ -41,25 +41,29 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
     >
       <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col overflow-hidden">
         {/* Top Section - University Branding */}
-        <div className="pt-10 px-6 flex flex-col items-center mb-8">
+        <div className="pt-10 px-6 flex flex-col mb-8">
           {/* University Logo - Letter A with green gradient */}
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center mb-6 flex-shrink-0">
-            <span className="text-white text-3xl font-bold">A</span>
+          <div className="w-12 h-16 flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-xl font-bold">A</span>
+            </div>
           </div>
           
           {/* Expand Button */}
-          <button
-            onClick={onToggle}
-            data-testid="button-expand-sidebar"
-            className="group transition-transform duration-200 hover:scale-110"
-            aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
-          >
-            <ChevronsRight
-              className={`w-6 h-6 transition-transform duration-300 text-muted-foreground group-hover:text-primary ${
-                isExpanded ? "rotate-180" : "rotate-0"
-              }`}
-            />
-          </button>
+          <div className="w-12 h-12 flex items-center justify-center">
+            <button
+              onClick={onToggle}
+              data-testid="button-expand-sidebar"
+              className="group transition-transform duration-200 hover:scale-110"
+              aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
+            >
+              <ChevronsRight
+                className={`w-6 h-6 transition-transform duration-300 text-muted-foreground group-hover:text-primary ${
+                  isExpanded ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+          </div>
         </div>
 
         {/* Middle Section - Navigation Icons */}
