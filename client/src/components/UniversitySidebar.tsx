@@ -9,18 +9,23 @@ interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   { icon: Home, label: "Home", id: "home" },
-  { icon: Calendar, label: "Calendar", id: "calendar" },
-  { icon: FileText, label: "Document", id: "document" },
-  { icon: Users, label: "Users", id: "users" },
-  { icon: Calculator, label: "Calculator", id: "calculator" },
+  { icon: Calendar, label: "Agenda", id: "calendar" },
+  { icon: FileText, label: "Documentos", id: "document" },
+  { icon: Users, label: "Usuários", id: "users" },
+  { icon: Calculator, label: "Calculadora", id: "calculator" },
 ];
 
 const bottomItems: NavigationItem[] = [
-  { icon: Settings, label: "Settings", id: "settings" },
-  { icon: LogOut, label: "Logout", id: "logout" },
+  { icon: Settings, label: "Configurações", id: "settings" },
+  { icon: LogOut, label: "Sair", id: "logout" },
 ];
 
-export default function UniversitySidebar() {
+interface UniversitySidebarProps {
+  isExpanded: boolean;
+  onToggle: () => void;
+}
+
+export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySidebarProps) {
   const [activeItem, setActiveItem] = useState("home");
 
   const handleItemClick = (id: string) => {
@@ -29,12 +34,16 @@ export default function UniversitySidebar() {
   };
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-[160px] p-4">
-      <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col">
+    <div 
+      className={`fixed left-0 top-0 h-screen p-4 z-50 transition-all duration-300 ease-in-out ${
+        isExpanded ? "w-[280px]" : "w-[160px]"
+      }`}
+    >
+      <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col overflow-hidden">
         {/* Top Section - University Branding */}
         <div className="pt-10 px-6 flex flex-col items-center mb-8">
           {/* University Logo - Letter A with green gradient */}
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center mb-6">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center mb-6 flex-shrink-0">
             <span className="text-white text-3xl font-bold">A</span>
           </div>
           
@@ -61,12 +70,15 @@ export default function UniversitySidebar() {
               />
             </button>
             <button
+              onClick={onToggle}
               data-testid="button-expand-sidebar"
               className="group transition-transform duration-200 hover:scale-110"
-              aria-label="Expand sidebar"
+              aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
             >
               <ChevronsRight
-                className="w-6 h-6 transition-colors duration-200 text-muted-foreground group-hover:text-primary"
+                className={`w-6 h-6 transition-all duration-300 text-muted-foreground group-hover:text-primary ${
+                  isExpanded ? "rotate-180" : "rotate-0"
+                }`}
               />
             </button>
           </div>
@@ -83,22 +95,38 @@ export default function UniversitySidebar() {
                 key={item.id}
                 onClick={() => handleItemClick(item.id)}
                 data-testid={`button-nav-${item.id}`}
-                className={`relative group transition-transform duration-200 hover:scale-110 ${
-                  isActive ? "" : ""
+                className={`relative group transition-all duration-200 hover:scale-105 flex items-center gap-3 ${
+                  isExpanded ? "w-full justify-start" : "justify-center"
                 }`}
                 aria-label={item.label}
               >
-                {/* Active state background circle */}
+                {/* Active state background */}
                 {isActive && (
-                  <div className="absolute inset-0 -m-3 bg-primary/10 rounded-full" />
+                  <div className={`absolute bg-primary/10 rounded-full transition-all duration-300 ${
+                    isExpanded ? "inset-0 -mx-2 -my-1 rounded-xl" : "inset-0 -m-3"
+                  }`} />
                 )}
                 <Icon
-                  className={`w-6 h-6 transition-colors duration-200 relative z-10 ${
+                  className={`w-6 h-6 transition-colors duration-200 relative z-10 flex-shrink-0 ${
                     isActive
                       ? "text-primary"
                       : "text-muted-foreground group-hover:text-primary"
                   }`}
                 />
+                {/* Label with animation */}
+                <span 
+                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 ${
+                    isActive
+                      ? "text-primary"
+                      : "text-muted-foreground group-hover:text-primary"
+                  } ${
+                    isExpanded 
+                      ? "opacity-100 translate-x-0" 
+                      : "opacity-0 -translate-x-4 absolute pointer-events-none"
+                  }`}
+                >
+                  {item.label}
+                </span>
               </button>
             );
           })}
@@ -115,19 +143,37 @@ export default function UniversitySidebar() {
                 key={item.id}
                 onClick={() => handleItemClick(item.id)}
                 data-testid={`button-${item.id}`}
-                className={`relative group transition-transform duration-200 hover:scale-110`}
+                className={`relative group transition-all duration-200 hover:scale-105 flex items-center gap-3 ${
+                  isExpanded ? "w-full justify-start" : "justify-center"
+                }`}
                 aria-label={item.label}
               >
                 {isActive && (
-                  <div className="absolute inset-0 -m-3 bg-primary/10 rounded-full" />
+                  <div className={`absolute bg-primary/10 rounded-full transition-all duration-300 ${
+                    isExpanded ? "inset-0 -mx-2 -my-1 rounded-xl" : "inset-0 -m-3"
+                  }`} />
                 )}
                 <Icon
-                  className={`w-6 h-6 transition-colors duration-200 relative z-10 ${
+                  className={`w-6 h-6 transition-colors duration-200 relative z-10 flex-shrink-0 ${
                     isActive
                       ? "text-primary"
                       : "text-muted-foreground group-hover:text-primary"
                   }`}
                 />
+                {/* Label with animation */}
+                <span 
+                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 ${
+                    isActive
+                      ? "text-primary"
+                      : "text-muted-foreground group-hover:text-primary"
+                  } ${
+                    isExpanded 
+                      ? "opacity-100 translate-x-0" 
+                      : "opacity-0 -translate-x-4 absolute pointer-events-none"
+                  }`}
+                >
+                  {item.label}
+                </span>
               </button>
             );
           })}
