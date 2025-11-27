@@ -50,19 +50,17 @@ export default function DashboardContent() {
       </div>
       {/* Services Section */}
       <div 
-        className="inline-flex justify-end items-stretch gap-3 h-[calc(100vh-16px-16px-320px-12px)]"
-        style={{ '--services-height': 'calc(100vh - 16px - 16px - 320px - 12px)' } as React.CSSProperties}
+        className="flex justify-start items-stretch gap-3 h-[calc(100vh-16px-16px-320px-12px)] w-full"
       >
         <div 
-          className="grid grid-cols-2 grid-rows-2 gap-3"
-          style={{ height: 'var(--services-height)', width: 'var(--services-height)' } as React.CSSProperties}
+          className="flex-1 grid grid-cols-2 grid-rows-2 gap-3"
         >
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
         </div>
-        <div className="flex-1 p-8 bg-red-100 rounded-[40px] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
+        <div className="w-96 p-8 bg-red-100 rounded-[40px] flex flex-col justify-start items-start gap-2.5 overflow-hidden">
           <div className="self-stretch inline-flex justify-between items-center gap-40">
             <div className="inline-flex flex-col justify-start items-start">
               <div className="justify-start text-black text-2xl font-semibold font-['Inter']">Próximos Serviços</div>
