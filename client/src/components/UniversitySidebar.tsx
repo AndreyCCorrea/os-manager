@@ -41,12 +41,10 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
     >
       <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col overflow-hidden">
         {/* Top Section - University Branding */}
-        <div className="pt-10 px-6 flex flex-col mb-8">
+        <div className={`pt-10 px-6 flex flex-col mb-8 ${isExpanded ? "items-start" : "items-center"}`}>
           {/* University Logo - Letter A with green gradient */}
-          <div className="w-12 h-16 flex items-center justify-center mb-6">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-xl font-bold">A</span>
-            </div>
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center flex-shrink-0 mb-6">
+            <span className="text-white text-xl font-bold">A</span>
           </div>
           
           {/* Expand Button */}
@@ -67,7 +65,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </div>
 
         {/* Middle Section - Navigation Icons */}
-        <nav className="flex-1 flex flex-col justify-center space-y-2 px-6">
+        <nav className={`flex-1 flex flex-col justify-center space-y-2 px-6 ${isExpanded ? "items-start" : "items-center"}`}>
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
@@ -77,7 +75,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 key={item.id}
                 onClick={() => handleItemClick(item.id)}
                 data-testid={`button-nav-${item.id}`}
-                className="relative group w-full h-12 flex items-center justify-start hover:scale-105 transition-transform duration-200"
+                className={`relative group h-12 flex items-center hover:scale-105 transition-transform duration-200 ${isExpanded ? "w-full justify-start" : "w-12 justify-center"}`}
                 aria-label={item.label}
               >
                 {/* Active state background */}
@@ -116,7 +114,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </nav>
 
         {/* Bottom Section - Settings & Logout */}
-        <div className="pb-10 flex flex-col space-y-2 px-6">
+        <div className={`pb-10 flex flex-col space-y-2 px-6 ${isExpanded ? "items-start" : "items-center"}`}>
           {bottomItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
@@ -126,7 +124,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 key={item.id}
                 onClick={() => handleItemClick(item.id)}
                 data-testid={`button-${item.id}`}
-                className="relative group w-full h-12 flex items-center justify-start hover:scale-105 transition-transform duration-200"
+                className={`relative group h-12 flex items-center hover:scale-105 transition-transform duration-200 ${isExpanded ? "w-full justify-start" : "w-12 justify-center"}`}
                 aria-label={item.label}
               >
                 {/* Active state background */}
