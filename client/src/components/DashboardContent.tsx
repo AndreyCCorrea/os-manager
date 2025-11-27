@@ -63,7 +63,7 @@ export default function DashboardContent() {
           <div className="w-full h-full p-2.5 bg-red-100 rounded-[40px]" />
         </div>
         <div className="flex-1 p-8 bg-red-100 rounded-[40px] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-          <div className="self-stretch inline-flex justify-between items-center gap-16">
+          <div className="self-stretch inline-flex justify-between items-center gap-80">
             <div className="inline-flex flex-col justify-start items-start">
               <div className="justify-start text-black text-2xl font-semibold font-['Inter']">Próximos Serviços</div>
               <div className="justify-start text-black text-sm font-normal font-['Inter']">Agendamento dos próximos serviços</div>
