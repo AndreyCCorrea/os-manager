@@ -1,4 +1,4 @@
-import { Home, Calendar, FileText, Users, Calculator, Settings, LogOut, Bell, ChevronsRight } from "lucide-react";
+import { Home, Calendar, FileText, Users, Calculator, Settings, LogOut, ChevronsRight } from "lucide-react";
 import { useState } from "react";
 
 interface NavigationItem {
@@ -47,41 +47,19 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
             <span className="text-white text-3xl font-bold">A</span>
           </div>
           
-          {/* Notification and Expand Buttons */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => {
-                setActiveItem("notifications");
-                console.log("Notifications clicked");
-              }}
-              data-testid="button-notifications"
-              className="relative group transition-transform duration-200 hover:scale-110"
-              aria-label="Notifications"
-            >
-              {activeItem === "notifications" && (
-                <div className="absolute inset-0 -m-3 bg-primary/10 rounded-full" />
-              )}
-              <Bell
-                className={`w-6 h-6 transition-colors duration-200 relative z-10 ${
-                  activeItem === "notifications"
-                    ? "text-primary"
-                    : "text-muted-foreground group-hover:text-primary"
-                }`}
-              />
-            </button>
-            <button
-              onClick={onToggle}
-              data-testid="button-expand-sidebar"
-              className="group transition-transform duration-200 hover:scale-110"
-              aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
-            >
-              <ChevronsRight
-                className={`w-6 h-6 transition-transform duration-300 text-muted-foreground group-hover:text-primary ${
-                  isExpanded ? "rotate-180" : "rotate-0"
-                }`}
-              />
-            </button>
-          </div>
+          {/* Expand Button */}
+          <button
+            onClick={onToggle}
+            data-testid="button-expand-sidebar"
+            className="group transition-transform duration-200 hover:scale-110"
+            aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
+          >
+            <ChevronsRight
+              className={`w-6 h-6 transition-transform duration-300 text-muted-foreground group-hover:text-primary ${
+                isExpanded ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          </button>
         </div>
 
         {/* Middle Section - Navigation Icons */}
