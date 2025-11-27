@@ -10,7 +10,7 @@ export default function DashboardContent() {
         <div className="w-52 p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
           <div className="inline-flex justify-start items-center gap-2">
             <ClipboardList className="w-5 h-5 text-black" />
-            <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-open">Ordens Abertas</div>
+            <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-open">Abertas</div>
           </div>
           <div className="self-stretch inline-flex justify-between items-center">
             <div className="text-black dark:text-white text-2xl font-semibold" data-testid="text-orders-open-count">1200</div>
@@ -24,7 +24,7 @@ export default function DashboardContent() {
         <div className="w-52 p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
           <div className="inline-flex justify-start items-center gap-2">
             <Zap className="w-5 h-5 text-black" />
-            <div className="text-black dark:text-white text-sm font-normal whitespace-nowrap" data-testid="text-orders-execution">Ordens Em Execução</div>
+            <div className="text-black dark:text-white text-sm font-normal whitespace-nowrap" data-testid="text-orders-execution">Em Execução</div>
           </div>
           <div className="self-stretch inline-flex justify-between items-center">
             <div className="text-black dark:text-white text-2xl font-semibold" data-testid="text-orders-execution-count">980</div>
@@ -38,7 +38,7 @@ export default function DashboardContent() {
         <div className="w-52 p-6 bg-stone-400 dark:bg-stone-600 rounded-3xl inline-flex flex-col justify-center items-start gap-10 flex-shrink-0">
           <div className="inline-flex justify-start items-center gap-2">
             <CheckCircle2 className="w-5 h-5 text-black" />
-            <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-finished">Ordens Finalizadas</div>
+            <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-finished">Finalizadas</div>
           </div>
           <div className="self-stretch inline-flex justify-between items-center">
             <div className="text-black dark:text-white text-2xl font-semibold" data-testid="text-orders-finished-count">730</div>
