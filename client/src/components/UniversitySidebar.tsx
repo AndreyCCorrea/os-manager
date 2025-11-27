@@ -85,7 +85,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </div>
 
         {/* Middle Section - Navigation Icons */}
-        <nav className="flex-1 flex flex-col justify-center space-y-5">
+        <nav className="flex-1 flex flex-col justify-center space-y-2">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
@@ -95,8 +95,8 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 <button
                   onClick={() => handleItemClick(item.id)}
                   data-testid={`button-nav-${item.id}`}
-                  className={`relative group transition-all duration-300 hover:scale-105 flex items-center ${
-                    isExpanded ? "w-full px-4 py-2 justify-start" : "w-12 h-12 justify-center"
+                  className={`relative group transition-all duration-300 hover:scale-105 flex items-center h-12 ${
+                    isExpanded ? "w-full px-4 justify-start" : "w-12 justify-center"
                   }`}
                   aria-label={item.label}
                 >
@@ -134,7 +134,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </nav>
 
         {/* Bottom Section - Settings & Logout */}
-        <div className="pb-10 flex flex-col space-y-5">
+        <div className="pb-10 flex flex-col space-y-2">
           {bottomItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
@@ -144,8 +144,8 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 <button
                   onClick={() => handleItemClick(item.id)}
                   data-testid={`button-${item.id}`}
-                  className={`relative group transition-all duration-300 hover:scale-105 flex items-center ${
-                    isExpanded ? "w-full px-4 py-2 justify-start" : "w-12 h-12 justify-center"
+                  className={`relative group transition-all duration-300 hover:scale-105 flex items-center h-12 ${
+                    isExpanded ? "w-full px-4 justify-start" : "w-12 justify-center"
                   }`}
                   aria-label={item.label}
                 >
