@@ -35,7 +35,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
 
   return (
     <div 
-      className={`fixed left-0 top-0 h-screen p-4 z-50 transition-all duration-300 ease-in-out ${
+      className={`fixed left-0 top-0 h-screen p-4 z-50 transition-[width] duration-300 ease-in-out ${
         isExpanded ? "w-[280px]" : "w-[160px]"
       }`}
     >
@@ -76,7 +76,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
               aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
             >
               <ChevronsRight
-                className={`w-6 h-6 transition-all duration-300 text-muted-foreground group-hover:text-primary ${
+                className={`w-6 h-6 transition-transform duration-300 text-muted-foreground group-hover:text-primary ${
                   isExpanded ? "rotate-180" : "rotate-0"
                 }`}
               />
@@ -85,98 +85,99 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </div>
 
         {/* Middle Section - Navigation Icons */}
-        <nav className="flex-1 flex flex-col justify-center space-y-2">
+        <nav className="flex-1 flex flex-col justify-center space-y-2 px-6">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
             
             return (
-              <div key={item.id} className="flex justify-center px-6">
-                <button
-                  onClick={() => handleItemClick(item.id)}
-                  data-testid={`button-nav-${item.id}`}
-                  className={`relative group transition-all duration-300 hover:scale-105 flex items-center h-12 ${
-                    isExpanded ? "w-full px-4 justify-start" : "w-12 justify-center"
-                  }`}
-                  aria-label={item.label}
-                >
-                  {/* Active state background */}
-                  {isActive && (
-                    <div className={`absolute bg-primary/10 transition-all duration-300 ${
-                      isExpanded ? "inset-0 rounded-xl" : "inset-0 rounded-full"
-                    }`} />
-                  )}
+              <button
+                key={item.id}
+                onClick={() => handleItemClick(item.id)}
+                data-testid={`button-nav-${item.id}`}
+                className="relative group w-full h-12 flex items-center justify-start hover:scale-105 transition-transform duration-200"
+                aria-label={item.label}
+              >
+                {/* Active state background */}
+                {isActive && (
+                  <div className={`absolute bg-primary/10 top-0 bottom-0 left-0 transition-[width,border-radius] duration-300 ${
+                    isExpanded ? "right-0 rounded-xl" : "w-12 rounded-full"
+                  }`} />
+                )}
+                {/* Icon container - fixed width */}
+                <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 relative z-10">
                   <Icon
-                    className={`w-6 h-6 transition-colors duration-200 relative z-10 flex-shrink-0 ${
+                    className={`w-6 h-6 transition-colors duration-200 ${
                       isActive
                         ? "text-primary"
                         : "text-muted-foreground group-hover:text-primary"
                     }`}
                   />
-                  {/* Label with animation */}
-                  <span 
-                    className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden ${
-                      isActive
-                        ? "text-primary"
-                        : "text-muted-foreground group-hover:text-primary"
-                    } ${
-                      isExpanded 
-                        ? "opacity-100 ml-3 max-w-[150px]" 
-                        : "opacity-0 ml-0 max-w-0"
-                    }`}
-                  >
-                    {item.label}
-                  </span>
-                </button>
-              </div>
+                </div>
+                {/* Label with animation - only this animates */}
+                <span 
+                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-[max-width,opacity,margin] duration-300 overflow-hidden ${
+                    isActive
+                      ? "text-primary"
+                      : "text-muted-foreground group-hover:text-primary"
+                  } ${
+                    isExpanded 
+                      ? "opacity-100 max-w-[150px] ml-1" 
+                      : "opacity-0 max-w-0 ml-0"
+                  }`}
+                >
+                  {item.label}
+                </span>
+              </button>
             );
           })}
         </nav>
 
         {/* Bottom Section - Settings & Logout */}
-        <div className="pb-10 flex flex-col space-y-2">
+        <div className="pb-10 flex flex-col space-y-2 px-6">
           {bottomItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
             
             return (
-              <div key={item.id} className="flex justify-center px-6">
-                <button
-                  onClick={() => handleItemClick(item.id)}
-                  data-testid={`button-${item.id}`}
-                  className={`relative group transition-all duration-300 hover:scale-105 flex items-center h-12 ${
-                    isExpanded ? "w-full px-4 justify-start" : "w-12 justify-center"
-                  }`}
-                  aria-label={item.label}
-                >
-                  {isActive && (
-                    <div className={`absolute bg-primary/10 transition-all duration-300 ${
-                      isExpanded ? "inset-0 rounded-xl" : "inset-0 rounded-full"
-                    }`} />
-                  )}
+              <button
+                key={item.id}
+                onClick={() => handleItemClick(item.id)}
+                data-testid={`button-${item.id}`}
+                className="relative group w-full h-12 flex items-center justify-start hover:scale-105 transition-transform duration-200"
+                aria-label={item.label}
+              >
+                {/* Active state background */}
+                {isActive && (
+                  <div className={`absolute bg-primary/10 top-0 bottom-0 left-0 transition-[width,border-radius] duration-300 ${
+                    isExpanded ? "right-0 rounded-xl" : "w-12 rounded-full"
+                  }`} />
+                )}
+                {/* Icon container - fixed width */}
+                <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 relative z-10">
                   <Icon
-                    className={`w-6 h-6 transition-colors duration-200 relative z-10 flex-shrink-0 ${
+                    className={`w-6 h-6 transition-colors duration-200 ${
                       isActive
                         ? "text-primary"
                         : "text-muted-foreground group-hover:text-primary"
                     }`}
                   />
-                  {/* Label with animation */}
-                  <span 
-                    className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden ${
-                      isActive
-                        ? "text-primary"
-                        : "text-muted-foreground group-hover:text-primary"
-                    } ${
-                      isExpanded 
-                        ? "opacity-100 ml-3 max-w-[150px]" 
-                        : "opacity-0 ml-0 max-w-0"
-                    }`}
-                  >
-                    {item.label}
-                  </span>
-                </button>
-              </div>
+                </div>
+                {/* Label with animation - only this animates */}
+                <span 
+                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-[max-width,opacity,margin] duration-300 overflow-hidden ${
+                    isActive
+                      ? "text-primary"
+                      : "text-muted-foreground group-hover:text-primary"
+                  } ${
+                    isExpanded 
+                      ? "opacity-100 max-w-[150px] ml-1" 
+                      : "opacity-0 max-w-0 ml-0"
+                  }`}
+                >
+                  {item.label}
+                </span>
+              </button>
             );
           })}
         </div>
