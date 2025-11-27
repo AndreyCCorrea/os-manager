@@ -1,4 +1,4 @@
-import { Home, Calendar, FileText, Users, Calculator, Settings, LogOut, Bell } from "lucide-react";
+import { Home, Calendar, FileText, Users, Calculator, Settings, LogOut, Bell, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 interface NavigationItem {
@@ -38,27 +38,38 @@ export default function UniversitySidebar() {
             <span className="text-white text-3xl font-bold">A</span>
           </div>
           
-          {/* Notification Button */}
-          <button
-            onClick={() => {
-              setActiveItem("notifications");
-              console.log("Notifications clicked");
-            }}
-            data-testid="button-notifications"
-            className="relative group transition-transform duration-200 hover:scale-110"
-            aria-label="Notifications"
-          >
-            {activeItem === "notifications" && (
-              <div className="absolute inset-0 -m-3 bg-primary/10 rounded-full" />
-            )}
-            <Bell
-              className={`w-6 h-6 transition-colors duration-200 relative z-10 ${
-                activeItem === "notifications"
-                  ? "text-primary"
-                  : "text-muted-foreground group-hover:text-primary"
-              }`}
-            />
-          </button>
+          {/* Notification and Expand Buttons */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                setActiveItem("notifications");
+                console.log("Notifications clicked");
+              }}
+              data-testid="button-notifications"
+              className="relative group transition-transform duration-200 hover:scale-110"
+              aria-label="Notifications"
+            >
+              {activeItem === "notifications" && (
+                <div className="absolute inset-0 -m-3 bg-primary/10 rounded-full" />
+              )}
+              <Bell
+                className={`w-6 h-6 transition-colors duration-200 relative z-10 ${
+                  activeItem === "notifications"
+                    ? "text-primary"
+                    : "text-muted-foreground group-hover:text-primary"
+                }`}
+              />
+            </button>
+            <button
+              data-testid="button-expand-sidebar"
+              className="group transition-transform duration-200 hover:scale-110"
+              aria-label="Expand sidebar"
+            >
+              <ChevronRight
+                className="w-5 h-5 transition-colors duration-200 text-muted-foreground group-hover:text-primary"
+              />
+            </button>
+          </div>
         </div>
 
         {/* Middle Section - Navigation Icons */}
