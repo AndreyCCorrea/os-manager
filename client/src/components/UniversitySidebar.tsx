@@ -36,16 +36,16 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
   return (
     <div 
       className={`fixed left-0 top-0 h-screen p-4 z-50 transition-[width] duration-300 ease-in-out ${
-        isExpanded ? "w-[280px]" : "w-[160px]"
+        isExpanded ? "w-[260px]" : "w-[100px]"
       }`}
     >
       <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col overflow-hidden">
         {/* Top Section - University Branding */}
-        <div className="pt-10 px-6 flex flex-col mb-8">
+        <div className="pt-10 px-5 flex flex-col mb-8">
           {/* University Logo - Letter A with green gradient */}
-          <div className="w-12 h-16 flex items-center justify-center mb-6">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-xl font-bold">A</span>
+          <div className="w-12 flex items-center justify-center mb-2">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-2xl font-bold">A</span>
             </div>
           </div>
           
@@ -67,7 +67,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </div>
 
         {/* Middle Section - Navigation Icons */}
-        <nav className="flex-1 flex flex-col justify-center space-y-2 px-6">
+        <nav className="flex-1 flex flex-col justify-center space-y-2 px-5">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
@@ -116,7 +116,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </nav>
 
         {/* Bottom Section - Settings & Logout */}
-        <div className="pb-10 flex flex-col space-y-2 px-6">
+        <div className="pb-10 flex flex-col space-y-2 px-5">
           {bottomItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
