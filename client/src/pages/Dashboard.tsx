@@ -14,7 +14,7 @@ export default function Dashboard() {
       <UniversitySidebar isExpanded={isSidebarExpanded} onToggle={toggleSidebar} />
       <main 
         className={`min-h-screen transition-all duration-300 ease-in-out ${
-          isSidebarExpanded ? "ml-[260px]" : "ml-[100px]"
+          isSidebarExpanded ? "ml-[280px]" : "ml-[160px]"
         }`}
       >
         <DashboardContent />
