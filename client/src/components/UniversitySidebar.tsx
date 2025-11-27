@@ -40,37 +40,30 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
       }`}
     >
       <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col overflow-hidden">
-        {/* Navigation Section */}
-        <nav className="flex-1 flex flex-col justify-center space-y-2 px-6">
-          {/* University Logo Button */}
-          <div className="flex justify-center px-6 mb-4">
-            <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center">
-                <span className="text-white text-xl font-bold">A</span>
-              </div>
-            </div>
+        {/* Top Section - University Branding */}
+        <div className="pt-10 px-6 flex flex-col items-center mb-8">
+          {/* University Logo - Letter A with green gradient */}
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center mb-6 flex-shrink-0">
+            <span className="text-white text-3xl font-bold">A</span>
           </div>
-
+          
           {/* Expand Button */}
-          <div className="flex justify-center px-6">
-            <button
-              onClick={onToggle}
-              data-testid="button-expand-sidebar"
-              className="relative group w-full h-12 flex items-center justify-start hover:scale-105 transition-transform duration-200"
-              aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
-            >
-              <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 relative z-10">
-                <ChevronsRight
-                  className={`w-6 h-6 transition-transform duration-300 text-muted-foreground group-hover:text-primary ${
-                    isExpanded ? "rotate-180" : "rotate-0"
-                  }`}
-                />
-              </div>
-            </button>
-          </div>
+          <button
+            onClick={onToggle}
+            data-testid="button-expand-sidebar"
+            className="group transition-transform duration-200 hover:scale-110"
+            aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
+          >
+            <ChevronsRight
+              className={`w-6 h-6 transition-transform duration-300 text-muted-foreground group-hover:text-primary ${
+                isExpanded ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          </button>
+        </div>
 
-          {/* Separator */}
-          <div className="h-px bg-gray-200 dark:bg-gray-700 my-2"></div>
+        {/* Middle Section - Navigation Icons */}
+        <nav className="flex-1 flex flex-col justify-center space-y-2 px-6">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
