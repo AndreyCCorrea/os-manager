@@ -1,4 +1,4 @@
-import { Home, Calendar, FileText, Users, Calculator, Settings, LogOut, Bell, ChevronRight } from "lucide-react";
+import { Home, Calendar, FileText, Users, Calculator, Settings, LogOut, Bell, ChevronsRight } from "lucide-react";
 import { useState } from "react";
 
 interface NavigationItem {
@@ -65,8 +65,8 @@ export default function UniversitySidebar() {
               className="group transition-transform duration-200 hover:scale-110"
               aria-label="Expand sidebar"
             >
-              <ChevronRight
-                className="w-5 h-5 transition-colors duration-200 text-muted-foreground group-hover:text-primary"
+              <ChevronsRight
+                className="w-6 h-6 transition-colors duration-200 text-muted-foreground group-hover:text-primary"
               />
             </button>
           </div>
