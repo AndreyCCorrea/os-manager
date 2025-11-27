@@ -36,12 +36,12 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
   return (
     <div 
       className={`fixed left-0 top-0 h-screen p-4 z-50 transition-[width] duration-300 ease-in-out ${
-        isExpanded ? "w-[280px]" : "w-[160px]"
+        isExpanded ? "w-[240px]" : "w-[96px]"
       }`}
     >
       <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col overflow-hidden">
         {/* Top Section - University Branding */}
-        <div className={`pt-10 px-6 flex flex-col mb-8 ${isExpanded ? "items-start" : "items-center"}`}>
+        <div className="pt-10 flex flex-col items-center mb-8">
           {/* University Logo - Letter A with green gradient */}
           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center flex-shrink-0 mb-6">
             <span className="text-white text-xl font-bold">A</span>
@@ -65,7 +65,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </div>
 
         {/* Middle Section - Navigation Icons */}
-        <nav className={`flex-1 flex flex-col justify-center space-y-2 px-6 ${isExpanded ? "items-start" : "items-center"}`}>
+        <nav className="flex-1 flex flex-col justify-center space-y-2 items-center">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
@@ -75,13 +75,15 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 key={item.id}
                 onClick={() => handleItemClick(item.id)}
                 data-testid={`button-nav-${item.id}`}
-                className={`relative group h-12 flex items-center hover:scale-105 transition-transform duration-200 ${isExpanded ? "w-full justify-start" : "w-12 justify-center"}`}
+                className={`relative group h-12 flex items-center justify-start hover:scale-105 transition-all duration-300 ${
+                  isExpanded ? "w-[calc(100%-48px)] px-0" : "w-12"
+                }`}
                 aria-label={item.label}
               >
                 {/* Active state background */}
                 {isActive && (
-                  <div className={`absolute bg-primary/10 top-0 bottom-0 left-0 transition-[width,border-radius] duration-300 ${
-                    isExpanded ? "right-0 rounded-xl" : "w-12 rounded-full"
+                  <div className={`absolute bg-primary/10 top-0 bottom-0 left-0 right-0 transition-all duration-300 ${
+                    isExpanded ? "rounded-xl" : "rounded-full"
                   }`} />
                 )}
                 {/* Icon container - fixed width */}
@@ -94,16 +96,16 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                     }`}
                   />
                 </div>
-                {/* Label with animation - only this animates */}
+                {/* Label with animation */}
                 <span 
-                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-[max-width,opacity,margin] duration-300 overflow-hidden ${
+                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden ${
                     isActive
                       ? "text-primary"
                       : "text-muted-foreground group-hover:text-primary"
                   } ${
                     isExpanded 
-                      ? "opacity-100 max-w-[150px] ml-1" 
-                      : "opacity-0 max-w-0 ml-0"
+                      ? "opacity-100 max-w-[120px]" 
+                      : "opacity-0 max-w-0"
                   }`}
                 >
                   {item.label}
@@ -114,7 +116,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </nav>
 
         {/* Bottom Section - Settings & Logout */}
-        <div className={`pb-10 flex flex-col space-y-2 px-6 ${isExpanded ? "items-start" : "items-center"}`}>
+        <div className="pb-10 flex flex-col space-y-2 items-center">
           {bottomItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
@@ -124,13 +126,15 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 key={item.id}
                 onClick={() => handleItemClick(item.id)}
                 data-testid={`button-${item.id}`}
-                className={`relative group h-12 flex items-center hover:scale-105 transition-transform duration-200 ${isExpanded ? "w-full justify-start" : "w-12 justify-center"}`}
+                className={`relative group h-12 flex items-center justify-start hover:scale-105 transition-all duration-300 ${
+                  isExpanded ? "w-[calc(100%-48px)] px-0" : "w-12"
+                }`}
                 aria-label={item.label}
               >
                 {/* Active state background */}
                 {isActive && (
-                  <div className={`absolute bg-primary/10 top-0 bottom-0 left-0 transition-[width,border-radius] duration-300 ${
-                    isExpanded ? "right-0 rounded-xl" : "w-12 rounded-full"
+                  <div className={`absolute bg-primary/10 top-0 bottom-0 left-0 right-0 transition-all duration-300 ${
+                    isExpanded ? "rounded-xl" : "rounded-full"
                   }`} />
                 )}
                 {/* Icon container - fixed width */}
@@ -143,16 +147,16 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                     }`}
                   />
                 </div>
-                {/* Label with animation - only this animates */}
+                {/* Label with animation */}
                 <span 
-                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-[max-width,opacity,margin] duration-300 overflow-hidden ${
+                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden ${
                     isActive
                       ? "text-primary"
                       : "text-muted-foreground group-hover:text-primary"
                   } ${
                     isExpanded 
-                      ? "opacity-100 max-w-[150px] ml-1" 
-                      : "opacity-0 max-w-0 ml-0"
+                      ? "opacity-100 max-w-[120px]" 
+                      : "opacity-0 max-w-0"
                   }`}
                 >
                   {item.label}
