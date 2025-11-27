@@ -39,7 +39,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
   return (
     <div 
       className={`fixed left-0 top-0 h-screen p-4 z-50 transition-[width] duration-300 ease-in-out ${
-        isExpanded ? "w-[240px]" : "w-[80px]"
+        isExpanded ? "w-[272px]" : "w-[112px]"
       }`}
     >
       <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col overflow-hidden">
