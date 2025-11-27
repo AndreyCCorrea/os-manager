@@ -95,7 +95,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 {/* Active state background */}
                 {isActive && (
                   <div className={`absolute bg-primary/10 top-0 bottom-0 left-0 transition-all duration-300 ${
-                    isExpanded ? "right-0 rounded-xl" : "w-12 rounded-full"
+                    isExpanded ? "right-0 rounded-full" : "w-12 rounded-full"
                   }`} />
                 )}
                 {/* Icon container - fixed width column */}
@@ -144,7 +144,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 {/* Active state background */}
                 {isActive && (
                   <div className={`absolute bg-primary/10 top-0 bottom-0 left-0 transition-all duration-300 ${
-                    isExpanded ? "right-0 rounded-xl" : "w-12 rounded-full"
+                    isExpanded ? "right-0 rounded-full" : "w-12 rounded-full"
                   }`} />
                 )}
                 {/* Icon container - fixed width column */}
