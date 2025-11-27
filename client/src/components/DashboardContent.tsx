@@ -12,7 +12,7 @@ export default function DashboardContent() {
             <ClipboardList className="w-5 h-5 text-black" />
             <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-open">Abertas</div>
           </div>
-          <div className="self-stretch inline-flex justify-start items-center gap-8">
+          <div className="self-stretch inline-flex justify-start items-center gap-16">
             <div className="text-black dark:text-white text-2xl font-semibold" data-testid="text-orders-open-count">1200</div>
             <div className="w-8 h-8 relative bg-white rounded-2xl flex items-center justify-center">
               <TrendingUp className="w-4 h-4 text-black" />
@@ -26,7 +26,7 @@ export default function DashboardContent() {
             <Zap className="w-5 h-5 text-black" />
             <div className="text-black dark:text-white text-sm font-normal whitespace-nowrap" data-testid="text-orders-execution">Em Execução</div>
           </div>
-          <div className="self-stretch inline-flex justify-start items-center gap-8">
+          <div className="self-stretch inline-flex justify-start items-center gap-16">
             <div className="text-black dark:text-white text-2xl font-semibold" data-testid="text-orders-execution-count">980</div>
             <div className="w-8 h-8 relative bg-white rounded-2xl flex items-center justify-center">
               <TrendingUp className="w-4 h-4 text-black" />
@@ -40,7 +40,7 @@ export default function DashboardContent() {
             <CheckCircle2 className="w-5 h-5 text-black" />
             <div className="text-black dark:text-white text-sm font-normal" data-testid="text-orders-finished">Finalizadas</div>
           </div>
-          <div className="self-stretch inline-flex justify-start items-center gap-8">
+          <div className="self-stretch inline-flex justify-start items-center gap-16">
             <div className="text-black dark:text-white text-2xl font-semibold" data-testid="text-orders-finished-count">730</div>
             <div className="w-8 h-8 relative bg-white rounded-2xl flex items-center justify-center">
               <TrendingUp className="w-4 h-4 text-black" />
