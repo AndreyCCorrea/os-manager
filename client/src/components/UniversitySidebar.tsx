@@ -85,96 +85,98 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </div>
 
         {/* Middle Section - Navigation Icons */}
-        <nav className="flex-1 flex flex-col items-center justify-center space-y-5 px-6">
+        <nav className="flex-1 flex flex-col justify-center space-y-5">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
             
             return (
-              <button
-                key={item.id}
-                onClick={() => handleItemClick(item.id)}
-                data-testid={`button-nav-${item.id}`}
-                className={`relative group transition-all duration-200 hover:scale-105 flex items-center gap-3 ${
-                  isExpanded ? "w-full justify-start" : "justify-center"
-                }`}
-                aria-label={item.label}
-              >
-                {/* Active state background */}
-                {isActive && (
-                  <div className={`absolute bg-primary/10 rounded-full transition-all duration-300 ${
-                    isExpanded ? "inset-0 -mx-2 -my-1 rounded-xl" : "inset-0 -m-3"
-                  }`} />
-                )}
-                <Icon
-                  className={`w-6 h-6 transition-colors duration-200 relative z-10 flex-shrink-0 ${
-                    isActive
-                      ? "text-primary"
-                      : "text-muted-foreground group-hover:text-primary"
+              <div key={item.id} className="flex justify-center px-6">
+                <button
+                  onClick={() => handleItemClick(item.id)}
+                  data-testid={`button-nav-${item.id}`}
+                  className={`relative group transition-all duration-300 hover:scale-105 flex items-center ${
+                    isExpanded ? "w-full px-4 py-2 justify-start" : "w-12 h-12 justify-center"
                   }`}
-                />
-                {/* Label with animation */}
-                <span 
-                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 ${
-                    isActive
-                      ? "text-primary"
-                      : "text-muted-foreground group-hover:text-primary"
-                  } ${
-                    isExpanded 
-                      ? "opacity-100 translate-x-0" 
-                      : "opacity-0 -translate-x-4 absolute pointer-events-none"
-                  }`}
+                  aria-label={item.label}
                 >
-                  {item.label}
-                </span>
-              </button>
+                  {/* Active state background */}
+                  {isActive && (
+                    <div className={`absolute bg-primary/10 transition-all duration-300 ${
+                      isExpanded ? "inset-0 rounded-xl" : "inset-0 rounded-full"
+                    }`} />
+                  )}
+                  <Icon
+                    className={`w-6 h-6 transition-colors duration-200 relative z-10 flex-shrink-0 ${
+                      isActive
+                        ? "text-primary"
+                        : "text-muted-foreground group-hover:text-primary"
+                    }`}
+                  />
+                  {/* Label with animation */}
+                  <span 
+                    className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden ${
+                      isActive
+                        ? "text-primary"
+                        : "text-muted-foreground group-hover:text-primary"
+                    } ${
+                      isExpanded 
+                        ? "opacity-100 ml-3 max-w-[150px]" 
+                        : "opacity-0 ml-0 max-w-0"
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                </button>
+              </div>
             );
           })}
         </nav>
 
         {/* Bottom Section - Settings & Logout */}
-        <div className="pb-10 px-6 flex flex-col items-center space-y-5">
+        <div className="pb-10 flex flex-col space-y-5">
           {bottomItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
             
             return (
-              <button
-                key={item.id}
-                onClick={() => handleItemClick(item.id)}
-                data-testid={`button-${item.id}`}
-                className={`relative group transition-all duration-200 hover:scale-105 flex items-center gap-3 ${
-                  isExpanded ? "w-full justify-start" : "justify-center"
-                }`}
-                aria-label={item.label}
-              >
-                {isActive && (
-                  <div className={`absolute bg-primary/10 rounded-full transition-all duration-300 ${
-                    isExpanded ? "inset-0 -mx-2 -my-1 rounded-xl" : "inset-0 -m-3"
-                  }`} />
-                )}
-                <Icon
-                  className={`w-6 h-6 transition-colors duration-200 relative z-10 flex-shrink-0 ${
-                    isActive
-                      ? "text-primary"
-                      : "text-muted-foreground group-hover:text-primary"
+              <div key={item.id} className="flex justify-center px-6">
+                <button
+                  onClick={() => handleItemClick(item.id)}
+                  data-testid={`button-${item.id}`}
+                  className={`relative group transition-all duration-300 hover:scale-105 flex items-center ${
+                    isExpanded ? "w-full px-4 py-2 justify-start" : "w-12 h-12 justify-center"
                   }`}
-                />
-                {/* Label with animation */}
-                <span 
-                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 ${
-                    isActive
-                      ? "text-primary"
-                      : "text-muted-foreground group-hover:text-primary"
-                  } ${
-                    isExpanded 
-                      ? "opacity-100 translate-x-0" 
-                      : "opacity-0 -translate-x-4 absolute pointer-events-none"
-                  }`}
+                  aria-label={item.label}
                 >
-                  {item.label}
-                </span>
-              </button>
+                  {isActive && (
+                    <div className={`absolute bg-primary/10 transition-all duration-300 ${
+                      isExpanded ? "inset-0 rounded-xl" : "inset-0 rounded-full"
+                    }`} />
+                  )}
+                  <Icon
+                    className={`w-6 h-6 transition-colors duration-200 relative z-10 flex-shrink-0 ${
+                      isActive
+                        ? "text-primary"
+                        : "text-muted-foreground group-hover:text-primary"
+                    }`}
+                  />
+                  {/* Label with animation */}
+                  <span 
+                    className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden ${
+                      isActive
+                        ? "text-primary"
+                        : "text-muted-foreground group-hover:text-primary"
+                    } ${
+                      isExpanded 
+                        ? "opacity-100 ml-3 max-w-[150px]" 
+                        : "opacity-0 ml-0 max-w-0"
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                </button>
+              </div>
             );
           })}
         </div>
