@@ -53,20 +53,29 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
           </div>
           
           {/* Expand Button */}
-          <div className={`${iconColumnWidth} h-12 flex items-center justify-center`}>
-            <button
-              onClick={onToggle}
-              data-testid="button-expand-sidebar"
-              className="group transition-transform duration-200 hover:scale-110"
-              aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
-            >
+          <button
+            onClick={onToggle}
+            data-testid="button-expand-sidebar"
+            className="group h-12 grid grid-cols-[3rem_1fr] items-center hover:scale-105 transition-transform duration-200"
+            aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
+          >
+            <div className="w-12 h-12 flex items-center justify-center">
               <ChevronsRight
                 className={`w-6 h-6 transition-transform duration-300 text-muted-foreground group-hover:text-primary ${
                   isExpanded ? "rotate-180" : "rotate-0"
                 }`}
               />
-            </button>
-          </div>
+            </div>
+            <span 
+              className={`text-sm font-medium whitespace-nowrap transition-all duration-300 overflow-hidden text-left text-muted-foreground group-hover:text-primary ${
+                isExpanded 
+                  ? "opacity-100" 
+                  : "opacity-0 w-0"
+              }`}
+            >
+              Recolher
+            </span>
+          </button>
         </div>
 
         {/* Middle Section - Navigation Icons */}
@@ -101,7 +110,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 </div>
                 {/* Label column - animates width */}
                 <span 
-                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden ${
+                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden text-left ${
                     isActive
                       ? "text-primary"
                       : "text-muted-foreground group-hover:text-primary"
@@ -150,7 +159,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
                 </div>
                 {/* Label column - animates width */}
                 <span 
-                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden ${
+                  className={`text-sm font-medium relative z-10 whitespace-nowrap transition-all duration-300 overflow-hidden text-left ${
                     isActive
                       ? "text-primary"
                       : "text-muted-foreground group-hover:text-primary"
