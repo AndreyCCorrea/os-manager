@@ -1,0 +1,459 @@
+{
+  "designSystem": {
+    "name": "Dashboard Clientes - Main Content Design System",
+    "version": "1.0",
+    "description": "Sistema de design para a área de conteúdo principal do dashboard (Sidebar já está pronta)",
+    "scope": "Main content area only - excludes sidebar navigation"
+  },
+
+  "designPrinciples": {
+    "clarity": "Priorizar legibilidade e hierarquia visual clara através de espaçamento generoso e tipografia bem definida",
+    "efficiency": "Design focado em produtividade com ações rápidas e navegação intuitiva",
+    "minimalism": "Estética limpa e moderna, evitando elementos decorativos desnecessários",
+    "dataFocus": "Destaque para os dados, com chrome mínimo e distrações reduzidas",
+    "accessibility": "Contraste adequado, tamanhos de toque apropriados e navegação por teclado"
+  },
+
+  "colorPalette": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F8F9FA",
+      "tertiary": "#F1F3F5",
+      "description": "Backgrounds claros e neutros que não competem com o conteúdo"
+    },
+    "text": {
+      "primary": "#1F2937",
+      "secondary": "#6B7280",
+      "tertiary": "#9CA3AF",
+      "description": "Hierarquia de texto com contraste adequado WCAG AA"
+    },
+    "interactive": {
+      "primary": "#10B981",
+      "primaryHover": "#059669",
+      "primaryActive": "#047857",
+      "description": "Verde vibrante para ações primárias (Novo Cliente, confirmações)"
+    },
+    "borders": {
+      "subtle": "#E5E7EB",
+      "default": "#D1D5DB",
+      "strong": "#9CA3AF",
+      "description": "Bordas suaves que definem sem dominar"
+    },
+    "status": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6",
+      "description": "Cores semânticas para feedback e estados"
+    },
+    "badges": {
+      "fisica": {
+        "background": "#DBEAFE",
+        "text": "#1E40AF",
+        "description": "Badge azul suave para Pessoa Física"
+      },
+      "juridica": {
+        "background": "#D1FAE5",
+        "text": "#065F46",
+        "description": "Badge verde suave para Pessoa Jurídica"
+      }
+    },
+    "selection": {
+      "background": "#EFF6FF",
+      "border": "#3B82F6",
+      "description": "Azul suave para indicar seleção de linhas"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "primary": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      "description": "System fonts para performance e consistência cross-platform"
+    },
+    "scale": {
+      "h1": {
+        "size": "24px",
+        "weight": "600",
+        "lineHeight": "32px",
+        "letterSpacing": "-0.02em",
+        "usage": "Título da página (Clientes)",
+        "color": "#1F2937"
+      },
+      "h2": {
+        "size": "18px",
+        "weight": "600",
+        "lineHeight": "24px",
+        "letterSpacing": "-0.01em",
+        "usage": "Subtítulos e seções",
+        "color": "#1F2937"
+      },
+      "bodyLarge": {
+        "size": "15px",
+        "weight": "500",
+        "lineHeight": "22px",
+        "letterSpacing": "0",
+        "usage": "Nomes de clientes, dados principais",
+        "color": "#1F2937"
+      },
+      "bodyMedium": {
+        "size": "14px",
+        "weight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Texto padrão, labels, conteúdo de células",
+        "color": "#4B5563"
+      },
+      "bodySmall": {
+        "size": "13px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "letterSpacing": "0",
+        "usage": "Textos secundários, metadados",
+        "color": "#6B7280"
+      },
+      "caption": {
+        "size": "12px",
+        "weight": "500",
+        "lineHeight": "16px",
+        "letterSpacing": "0.02em",
+        "usage": "Headers de tabela, labels de formulário (UPPERCASE)",
+        "color": "#6B7280",
+        "transform": "uppercase"
+      }
+    }
+  },
+
+  "spacing": {
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "16px",
+      "xl": "24px",
+      "2xl": "32px",
+      "3xl": "48px",
+      "description": "Escala de espaçamento em múltiplos de 4px para consistência"
+    },
+    "componentSpacing": {
+      "tableRowHeight": "64px",
+      "tableRowPadding": "16px",
+      "headerHeight": "72px",
+      "pageContentPadding": "24px",
+      "description": "Espaçamentos específicos de componentes do main content"
+    },
+    "contentPadding": {
+      "page": "24px",
+      "card": "24px",
+      "table": "0px",
+      "description": "Padding interno de containers principais"
+    }
+  },
+
+  "layout": {
+    "mainContent": {
+      "note": "SIDEBAR JÁ ESTÁ PRONTA - Este design system foca apenas no conteúdo principal",
+      "padding": "24px",
+      "background": "#F8F9FA",
+      "maxWidth": "none",
+      "description": "Área de conteúdo principal com padding consistente"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "24px",
+      "description": "Sistema de grid para organização interna do conteúdo"
+    },
+    "breakpoints": {
+      "mobile": "0-640px",
+      "tablet": "641-1024px",
+      "desktop": "1025px+",
+      "description": "Breakpoints para design responsivo do main content"
+    }
+  },
+
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#10B981",
+        "backgroundHover": "#059669",
+        "color": "#FFFFFF",
+        "height": "40px",
+        "padding": "0 16px",
+        "borderRadius": "6px",
+        "fontWeight": "500",
+        "fontSize": "14px",
+        "shadow": "none",
+        "description": "Botão principal para ações primárias (Novo Cliente)"
+      },
+      "outline": {
+        "background": "#FFFFFF",
+        "backgroundHover": "#F9FAFB",
+        "color": "#374151",
+        "border": "1px solid #D1D5DB",
+        "height": "40px",
+        "padding": "0 16px",
+        "borderRadius": "6px",
+        "fontWeight": "500",
+        "fontSize": "14px",
+        "description": "Botão secundário (Filtros)"
+      },
+      "ghost": {
+        "background": "transparent",
+        "backgroundHover": "#F9FAFB",
+        "color": "#6B7280",
+        "height": "36px",
+        "padding": "0 8px",
+        "borderRadius": "4px",
+        "description": "Botão discreto para ações terciárias (ícones de ação)"
+      },
+      "destructive": {
+        "background": "transparent",
+        "backgroundHover": "#FEF2F2",
+        "color": "#DC2626",
+        "height": "36px",
+        "padding": "0 12px",
+        "borderRadius": "4px",
+        "description": "Botão para ações destrutivas (Excluir)"
+      }
+    },
+
+    "inputs": {
+      "search": {
+        "height": "40px",
+        "padding": "0 12px 0 36px",
+        "background": "#FFFFFF",
+        "border": "1px solid #D1D5DB",
+        "borderRadius": "6px",
+        "fontSize": "14px",
+        "placeholderColor": "#9CA3AF",
+        "focusBorder": "#3B82F6",
+        "focusRing": "0 0 0 3px rgba(59, 130, 246, 0.1)",
+        "iconSize": "20px",
+        "iconColor": "#9CA3AF",
+        "description": "Campo de busca com ícone à esquerda"
+      },
+      "checkbox": {
+        "size": "18px",
+        "borderRadius": "4px",
+        "border": "1px solid #D1D5DB",
+        "checkedBackground": "#10B981",
+        "checkedBorder": "#10B981",
+        "checkmarkColor": "#FFFFFF",
+        "description": "Checkbox para seleção de linhas"
+      }
+    },
+
+    "table": {
+      "container": {
+        "background": "#FFFFFF",
+        "borderRadius": "8px",
+        "border": "1px solid #E5E7EB",
+        "shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        "description": "Container da tabela com elevação sutil"
+      },
+      "header": {
+        "background": "#F9FAFB",
+        "height": "44px",
+        "padding": "0 16px",
+        "borderBottom": "1px solid #E5E7EB",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "color": "#6B7280",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.05em",
+        "description": "Cabeçalho da tabela com visual discreto"
+      },
+      "row": {
+        "height": "64px",
+        "padding": "0 16px",
+        "borderBottom": "1px solid #F1F3F5",
+        "background": "#FFFFFF",
+        "backgroundHover": "#F9FAFB",
+        "backgroundSelected": "#EFF6FF",
+        "borderSelected": "2px solid #3B82F6",
+        "transition": "background-color 150ms ease",
+        "description": "Linha da tabela com estados visuais claros"
+      },
+      "cell": {
+        "fontSize": "14px",
+        "color": "#1F2937",
+        "verticalAlign": "middle",
+        "description": "Células alinhadas verticalmente ao centro"
+      }
+    },
+
+    "avatar": {
+      "size": "40px",
+      "borderRadius": "50%",
+      "border": "2px solid #FFFFFF",
+      "shadow": "0 0 0 1px rgba(0, 0, 0, 0.05)",
+      "fallbackBackground": "#E5E7EB",
+      "fallbackColor": "#6B7280",
+      "fallbackFontSize": "14px",
+      "fallbackFontWeight": "500",
+      "description": "Avatar circular com borda e fallback para iniciais"
+    },
+
+    "badge": {
+      "height": "24px",
+      "padding": "0 10px",
+      "borderRadius": "12px",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "display": "inline-flex",
+      "alignItems": "center",
+      "description": "Badge pill para indicadores de status"
+    },
+
+    "dropdown": {
+      "background": "#FFFFFF",
+      "borderRadius": "8px",
+      "border": "1px solid #E5E7EB",
+      "shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      "padding": "4px",
+      "minWidth": "180px",
+      "itemHeight": "36px",
+      "itemPadding": "0 12px",
+      "itemBorderRadius": "4px",
+      "itemHoverBackground": "#F9FAFB",
+      "itemActiveBackground": "#EFF6FF",
+      "dividerColor": "#E5E7EB",
+      "dividerMargin": "4px 0",
+      "description": "Menu dropdown com elevação e estados interativos"
+    },
+
+    "pagination": {
+      "buttonSize": "36px",
+      "buttonBorderRadius": "6px",
+      "buttonBackground": "#FFFFFF",
+      "buttonBackgroundHover": "#F9FAFB",
+      "buttonBackgroundActive": "#10B981",
+      "buttonColor": "#374151",
+      "buttonColorActive": "#FFFFFF",
+      "buttonBorder": "1px solid #E5E7EB",
+      "buttonDisabledOpacity": "0.4",
+      "gap": "4px",
+      "description": "Controles de paginação com estado ativo destacado"
+    },
+
+    "selectionBar": {
+      "background": "#EFF6FF",
+      "border": "1px solid #BFDBFE",
+      "borderRadius": "8px",
+      "padding": "12px 16px",
+      "marginBottom": "12px",
+      "height": "56px",
+      "description": "Barra que aparece quando itens são selecionados"
+    },
+
+    "icons": {
+      "size": "20px",
+      "strokeWidth": "2px",
+      "color": "#6B7280",
+      "colorHover": "#374151",
+      "description": "Ícones do Lucide com stroke consistente"
+    }
+  },
+
+  "interactions": {
+    "transitions": {
+      "fast": "100ms ease",
+      "default": "150ms ease",
+      "slow": "300ms ease",
+      "description": "Durações de transição para diferentes interações"
+    },
+    "hover": {
+      "cursor": "pointer",
+      "scale": "none",
+      "opacity": "none",
+      "description": "Hover states sutis focados em mudanças de cor"
+    },
+    "focus": {
+      "outline": "2px solid #3B82F6",
+      "outlineOffset": "2px",
+      "description": "Estados de foco visíveis para acessibilidade"
+    },
+    "active": {
+      "transform": "none",
+      "description": "Estados ativos sem animações exageradas"
+    }
+  },
+
+  "patterns": {
+    "emptyStates": {
+      "iconSize": "48px",
+      "iconColor": "#D1D5DB",
+      "titleSize": "18px",
+      "titleWeight": "600",
+      "titleColor": "#1F2937",
+      "descriptionSize": "14px",
+      "descriptionColor": "#6B7280",
+      "spacing": "16px",
+      "description": "Empty states centralizados e amigáveis"
+    },
+    "loading": {
+      "skeletonBackground": "#F1F3F5",
+      "skeletonAnimation": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      "spinnerColor": "#3B82F6",
+      "spinnerSize": "24px",
+      "description": "Loading states com skeleton ou spinner"
+    },
+    "tooltips": {
+      "background": "#1F2937",
+      "color": "#FFFFFF",
+      "fontSize": "12px",
+      "padding": "6px 10px",
+      "borderRadius": "6px",
+      "maxWidth": "200px",
+      "description": "Tooltips escuros com contraste alto"
+    }
+  },
+
+  "accessibility": {
+    "contrast": {
+      "minimumRatio": "4.5:1",
+      "largeTextRatio": "3:1",
+      "description": "Seguir WCAG 2.1 Level AA"
+    },
+    "touchTargets": {
+      "minimumSize": "44x44px",
+      "spacing": "8px",
+      "description": "Alvos de toque adequados para mobile"
+    },
+    "keyboard": {
+      "navigation": "Tab, Shift+Tab, Arrow keys",
+      "activation": "Enter, Space",
+      "description": "Navegação completa por teclado"
+    }
+  },
+
+  "responsive": {
+    "mobile": {
+      "tableBehavior": "Transform to card layout",
+      "hiddenColumns": ["Telefone", "Data de Criação"],
+      "stackedActions": true,
+      "description": "Em mobile, priorizar informações essenciais"
+    },
+    "tablet": {
+      "tableBehavior": "Horizontal scroll if needed",
+      "hiddenColumns": ["Telefone"],
+      "description": "Em tablet, permitir scroll horizontal"
+    },
+    "desktop": {
+      "tableBehavior": "Full table layout",
+      "allColumns": true,
+      "description": "Desktop mostra todas as colunas"
+    }
+  },
+
+  "dataVisualization": {
+    "density": {
+      "comfortable": "64px row height",
+      "compact": "48px row height",
+      "description": "Opções de densidade para preferência do usuário"
+    },
+    "alternatingRows": false,
+    "hoverHighlight": true,
+    "selectedHighlight": true,
+    "description": "Foco em clareza sem zebra stripes"
+  }
+}
