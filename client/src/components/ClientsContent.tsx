@@ -135,7 +135,7 @@ export default function ClientsContent() {
           </p>
         </div>
         <Button 
-          className="bg-[#10B981] hover:bg-[#059669] text-white gap-2"
+          className="bg-[#10B981] text-white gap-2"
           data-testid="button-new-client"
         >
           <Plus className="w-4 h-4" />
@@ -153,11 +153,11 @@ export default function ClientsContent() {
             {selectedClients.size} {selectedClients.size === 1 ? "cliente selecionado" : "clientes selecionados"}
           </span>
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="sm" className="text-[#6B7280] gap-1">
+            <Button variant="ghost" size="sm" className="text-[#6B7280] gap-1" data-testid="button-bulk-edit">
               <Pencil className="w-4 h-4" />
               Editar
             </Button>
-            <Button variant="ghost" size="sm" className="text-[#DC2626] hover:text-[#DC2626] hover:bg-[#FEF2F2] gap-1">
+            <Button variant="ghost" size="sm" className="text-[#DC2626] gap-1" data-testid="button-bulk-delete">
               <Trash2 className="w-4 h-4" />
               Excluir
             </Button>
@@ -183,7 +183,7 @@ export default function ClientsContent() {
         </div>
         <Button 
           variant="outline" 
-          className="gap-2 border-[#D1D5DB] text-[#374151] bg-white hover:bg-[#F9FAFB]"
+          className="gap-2 border-[#D1D5DB] text-[#374151] bg-white"
           data-testid="button-filter"
         >
           <Filter className="w-4 h-4" />
@@ -302,7 +302,7 @@ export default function ClientsContent() {
                         <Button 
                           variant="ghost" 
                           size="icon"
-                          className="w-8 h-8 text-[#6B7280] hover:text-[#374151]"
+                          className="w-8 h-8 text-[#6B7280]"
                           data-testid={`button-actions-${client.id}`}
                         >
                           <MoreHorizontal className="w-5 h-5" />
@@ -313,14 +313,14 @@ export default function ClientsContent() {
                         className="w-44 bg-white border border-[#E5E7EB] shadow-lg rounded-lg p-1"
                       >
                         <DropdownMenuItem 
-                          className="gap-2 text-sm text-[#374151] cursor-pointer rounded hover:bg-[#F9FAFB]"
+                          className="gap-2 text-sm text-[#374151] cursor-pointer rounded"
                           data-testid={`menu-view-${client.id}`}
                         >
                           <Eye className="w-4 h-4" />
                           Ver detalhes
                         </DropdownMenuItem>
                         <DropdownMenuItem 
-                          className="gap-2 text-sm text-[#374151] cursor-pointer rounded hover:bg-[#F9FAFB]"
+                          className="gap-2 text-sm text-[#374151] cursor-pointer rounded"
                           data-testid={`menu-edit-${client.id}`}
                         >
                           <Pencil className="w-4 h-4" />
@@ -328,7 +328,7 @@ export default function ClientsContent() {
                         </DropdownMenuItem>
                         <DropdownMenuSeparator className="bg-[#E5E7EB] my-1" />
                         <DropdownMenuItem 
-                          className="gap-2 text-sm text-[#DC2626] cursor-pointer rounded hover:bg-[#FEF2F2] focus:text-[#DC2626]"
+                          className="gap-2 text-sm text-[#DC2626] cursor-pointer rounded focus:text-[#DC2626]"
                           data-testid={`menu-delete-${client.id}`}
                         >
                           <Trash2 className="w-4 h-4" />
@@ -355,7 +355,7 @@ export default function ClientsContent() {
                 size="icon"
                 onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
-                className="w-9 h-9 border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] disabled:opacity-40"
+                className="w-9 h-9 border-[#E5E7EB] bg-white disabled:opacity-40"
                 data-testid="button-prev-page"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -368,8 +368,8 @@ export default function ClientsContent() {
                   onClick={() => setCurrentPage(page)}
                   className={`w-9 h-9 ${
                     page === currentPage 
-                      ? "bg-[#10B981] text-white border-[#10B981] hover:bg-[#059669]" 
-                      : "border-[#E5E7EB] bg-white text-[#374151] hover:bg-[#F9FAFB]"
+                      ? "bg-[#10B981] text-white border-[#10B981]" 
+                      : "border-[#E5E7EB] bg-white text-[#374151]"
                   }`}
                   data-testid={`button-page-${page}`}
                 >
@@ -381,7 +381,7 @@ export default function ClientsContent() {
                 size="icon"
                 onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                 disabled={currentPage === totalPages}
-                className="w-9 h-9 border-[#E5E7EB] bg-white hover:bg-[#F9FAFB] disabled:opacity-40"
+                className="w-9 h-9 border-[#E5E7EB] bg-white disabled:opacity-40"
                 data-testid="button-next-page"
               >
                 <ChevronRight className="w-4 h-4" />
