@@ -23,14 +23,13 @@ const bottomItems: NavigationItem[] = [
 interface UniversitySidebarProps {
   isExpanded: boolean;
   onToggle: () => void;
+  activeItem: string;
+  onNavigate: (id: string) => void;
 }
 
-export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySidebarProps) {
-  const [activeItem, setActiveItem] = useState("home");
-
+export default function UniversitySidebar({ isExpanded, onToggle, activeItem, onNavigate }: UniversitySidebarProps) {
   const handleItemClick = (id: string) => {
-    setActiveItem(id);
-    console.log(`Navigated to: ${id}`);
+    onNavigate(id);
   };
 
   const iconColumnWidth = "w-12";
