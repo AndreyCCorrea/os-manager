@@ -43,6 +43,44 @@
   --chart-3: 210 75% 42%;
   --chart-4: 150 60% 38%;
   --chart-5: 185 65% 40%;
+  
+  --status-open-bg: 214 95% 93%;
+  --status-open-text: 224 76% 40%;
+  --status-open-border: 212 96% 78%;
+  
+  --status-progress-bg: 48 96% 89%;
+  --status-progress-text: 28 80% 31%;
+  --status-progress-border: 48 96% 77%;
+  
+  --status-complete-bg: 152 76% 91%;
+  --status-complete-text: 164 86% 20%;
+  --status-complete-border: 156 72% 67%;
+  
+  --status-overdue-bg: 0 94% 94%;
+  --status-overdue-text: 0 63% 35%;
+  --status-overdue-border: 0 90% 81%;
+  
+  --status-cancelled-bg: 220 14% 96%;
+  --status-cancelled-text: 220 9% 46%;
+  --status-cancelled-border: 220 13% 82%;
+  
+  --time-on-track-bg: 214 95% 93%;
+  --time-on-track-text: 224 76% 40%;
+  
+  --time-warning-bg: 27 98% 83%;
+  --time-warning-text: 17 88% 40%;
+  
+  --time-overdue-bg: 0 94% 94%;
+  --time-overdue-text: 0 63% 35%;
+  
+  --selection-bg: 48 96% 89%;
+  --selection-border: 48 96% 77%;
+  --selection-text: 28 80% 31%;
+  
+  --interactive-orange: 25 95% 53%;
+  --interactive-orange-hover: 21 90% 48%;
+  --interactive-orange-active: 17 88% 40%;
+  
   --font-sans: Open Sans, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
@@ -127,6 +165,44 @@
   --chart-3: 210 75% 72%;
   --chart-4: 150 60% 65%;
   --chart-5: 185 65% 67%;
+  
+  --status-open-bg: 224 50% 25%;
+  --status-open-text: 212 90% 75%;
+  --status-open-border: 224 50% 35%;
+  
+  --status-progress-bg: 36 50% 20%;
+  --status-progress-text: 45 90% 70%;
+  --status-progress-border: 40 50% 30%;
+  
+  --status-complete-bg: 156 40% 20%;
+  --status-complete-text: 150 70% 65%;
+  --status-complete-border: 156 40% 30%;
+  
+  --status-overdue-bg: 0 50% 20%;
+  --status-overdue-text: 0 80% 70%;
+  --status-overdue-border: 0 50% 30%;
+  
+  --status-cancelled-bg: 220 10% 18%;
+  --status-cancelled-text: 220 10% 60%;
+  --status-cancelled-border: 220 10% 28%;
+  
+  --time-on-track-bg: 224 50% 25%;
+  --time-on-track-text: 212 90% 75%;
+  
+  --time-warning-bg: 30 60% 25%;
+  --time-warning-text: 25 90% 70%;
+  
+  --time-overdue-bg: 0 50% 20%;
+  --time-overdue-text: 0 80% 70%;
+  
+  --selection-bg: 36 50% 20%;
+  --selection-border: 40 50% 30%;
+  --selection-text: 45 90% 70%;
+  
+  --interactive-orange: 25 95% 55%;
+  --interactive-orange-hover: 25 95% 50%;
+  --interactive-orange-active: 25 95% 45%;
+  
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.20);

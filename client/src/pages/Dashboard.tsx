@@ -2,6 +2,7 @@ import { useState } from "react";
 import UniversitySidebar from "@/components/UniversitySidebar";
 import DashboardContent from "@/components/DashboardContent";
 import ClientsContent from "@/components/ClientsContent";
+import ServiceOrdersContent from "@/components/ServiceOrdersContent";
 
 export default function Dashboard() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -19,6 +20,8 @@ export default function Dashboard() {
     switch (activeView) {
       case "users":
         return <ClientsContent />;
+      case "document":
+        return <ServiceOrdersContent />;
       case "home":
       default:
         return <DashboardContent />;

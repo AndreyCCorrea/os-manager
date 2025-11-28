@@ -1,0 +1,771 @@
+{
+  "designSystem": {
+    "name": "Dashboard Ordens de Serviço - Design System",
+    "version": "1.0",
+    "description": "Sistema de design para gestão de ordens de serviço com foco em urgência, status visual e ações rápidas",
+    "scope": "Main content area only - sidebar já está finalizada"
+  },
+
+  "designPrinciples": {
+    "statusVisibility": "Hierarquia visual clara de urgência através de cores semânticas e indicadores visuais",
+    "actionOriented": "Design focado em ações rápidas com botões contextuais e operações em lote",
+    "dataHierarchy": "Informações críticas (número da ordem, cliente, status) em destaque visual",
+    "timeAwareness": "Sistema de alerta de prazos com código de cores intuitivo",
+    "workflow": "Interface otimizada para o fluxo de trabalho diário de técnicos e gestores"
+  },
+
+  "colorPalette": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F8F9FA",
+      "tertiary": "#F1F3F5",
+      "description": "Backgrounds neutros que permitem destaque dos status coloridos"
+    },
+    "text": {
+      "primary": "#1F2937",
+      "secondary": "#4B5563",
+      "tertiary": "#6B7280",
+      "muted": "#9CA3AF",
+      "description": "Hierarquia de texto com contraste adequado"
+    },
+    "interactive": {
+      "primary": "#F97316",
+      "primaryHover": "#EA580C",
+      "primaryActive": "#C2410C",
+      "description": "Laranja energético para ação principal (Abrir Ordem)"
+    },
+    "borders": {
+      "subtle": "#E5E7EB",
+      "default": "#D1D5DB",
+      "strong": "#9CA3AF",
+      "description": "Bordas que organizam sem dominar"
+    },
+    "status": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6",
+      "description": "Cores semânticas para feedback imediato"
+    },
+    "serviceStatus": {
+      "emAberto": {
+        "background": "#DBEAFE",
+        "text": "#1E40AF",
+        "border": "#93C5FD",
+        "description": "Azul suave - Ordem aguardando início"
+      },
+      "emProgresso": {
+        "background": "#FEF3C7",
+        "text": "#92400E",
+        "border": "#FDE68A",
+        "description": "Amarelo/Âmbar - Ordem em execução"
+      },
+      "finalizado": {
+        "background": "#D1FAE5",
+        "text": "#065F46",
+        "border": "#6EE7B7",
+        "description": "Verde suave - Ordem completa"
+      },
+      "atrasado": {
+        "background": "#FEE2E2",
+        "text": "#991B1B",
+        "border": "#FCA5A5",
+        "description": "Vermelho suave - Ordem com atraso"
+      },
+      "cancelado": {
+        "background": "#F3F4F6",
+        "text": "#4B5563",
+        "border": "#D1D5DB",
+        "description": "Cinza - Ordem cancelada"
+      }
+    },
+    "timeStatus": {
+      "noPrazo": {
+        "background": "#DBEAFE",
+        "text": "#1E40AF",
+        "icon": "#3B82F6",
+        "description": "Azul - Tempo adequado"
+      },
+      "proximoDoPrazo": {
+        "background": "#FED7AA",
+        "text": "#C2410C",
+        "icon": "#F97316",
+        "description": "Laranja - Menos de 3 dias"
+      },
+      "atrasado": {
+        "background": "#FEE2E2",
+        "text": "#991B1B",
+        "icon": "#DC2626",
+        "description": "Vermelho - Prazo vencido"
+      }
+    },
+    "selection": {
+      "background": "#FEF3C7",
+      "border": "#FDE68A",
+      "text": "#92400E",
+      "description": "Amarelo suave para seleção múltipla"
+    },
+    "urgency": {
+      "critical": "#DC2626",
+      "high": "#F97316",
+      "medium": "#F59E0B",
+      "low": "#3B82F6",
+      "description": "Cores de prioridade para bordas e destaques"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "primary": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      "description": "System fonts para consistência e performance"
+    },
+    "scale": {
+      "h1": {
+        "size": "24px",
+        "weight": "600",
+        "lineHeight": "32px",
+        "letterSpacing": "-0.02em",
+        "usage": "Título da página (Ordens de Serviço)",
+        "color": "#1F2937"
+      },
+      "orderNumber": {
+        "size": "14px",
+        "weight": "600",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Número da ordem (#00225)",
+        "color": "#1F2937",
+        "note": "Peso bold para facilitar escaneamento rápido"
+      },
+      "clientName": {
+        "size": "14px",
+        "weight": "500",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Nome do cliente",
+        "color": "#1F2937"
+      },
+      "serviceDescription": {
+        "size": "13px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "letterSpacing": "0",
+        "usage": "Descrição do serviço (truncado)",
+        "color": "#4B5563",
+        "maxLines": 2
+      },
+      "bodyMedium": {
+        "size": "14px",
+        "weight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Texto padrão (técnico, datas)",
+        "color": "#4B5563"
+      },
+      "bodySmall": {
+        "size": "13px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "letterSpacing": "0",
+        "usage": "Informações secundárias",
+        "color": "#6B7280"
+      },
+      "caption": {
+        "size": "12px",
+        "weight": "500",
+        "lineHeight": "16px",
+        "letterSpacing": "0.03em",
+        "usage": "Headers de tabela, hora",
+        "color": "#6B7280",
+        "transform": "uppercase"
+      },
+      "badge": {
+        "size": "11px",
+        "weight": "500",
+        "lineHeight": "16px",
+        "letterSpacing": "0.02em",
+        "usage": "Status badges, contadores de tempo",
+        "transform": "none"
+      },
+      "tabLabel": {
+        "size": "14px",
+        "weight": "500",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Labels de tabs (Em Aberto, Finalizadas)",
+        "activeWeight": "600"
+      }
+    }
+  },
+
+  "spacing": {
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "16px",
+      "xl": "24px",
+      "2xl": "32px",
+      "3xl": "48px",
+      "description": "Escala de espaçamento em múltiplos de 4px"
+    },
+    "componentSpacing": {
+      "tableRowHeight": "72px",
+      "tableRowPadding": "16px 20px",
+      "headerHeight": "96px",
+      "tabBarHeight": "44px",
+      "selectionBarHeight": "56px",
+      "pageContentPadding": "24px",
+      "description": "Altura maior nas linhas para acomodar conteúdo composto"
+    },
+    "internalSpacing": {
+      "stackedContentGap": "4px",
+      "badgeInternalPadding": "4px 10px",
+      "iconTextGap": "6px",
+      "buttonGroupGap": "8px",
+      "description": "Espaçamentos internos de componentes compostos"
+    }
+  },
+
+  "layout": {
+    "mainContent": {
+      "note": "SIDEBAR JÁ ESTÁ PRONTA - Foco apenas no main content",
+      "padding": "24px",
+      "background": "#F8F9FA",
+      "maxWidth": "none",
+      "description": "Área de conteúdo principal"
+    },
+    "header": {
+      "marginBottom": "24px",
+      "justifyContent": "space-between",
+      "alignItems": "flex-start",
+      "gap": "16px",
+      "description": "Header com título, tabs e actions"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "24px",
+      "description": "Grid para organização interna"
+    }
+  },
+
+  "components": {
+    "tabs": {
+      "container": {
+        "display": "flex",
+        "gap": "8px",
+        "borderBottom": "2px solid #E5E7EB",
+        "marginTop": "16px",
+        "description": "Container de tabs para filtros rápidos"
+      },
+      "tab": {
+        "height": "44px",
+        "padding": "0 16px",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "background": "transparent",
+        "border": "none",
+        "borderBottom": "2px solid transparent",
+        "marginBottom": "-2px",
+        "transition": "all 150ms ease",
+        "cursor": "pointer",
+        "description": "Tab individual"
+      },
+      "tabActive": {
+        "fontWeight": "600",
+        "color": "#3B82F6",
+        "borderBottom": "2px solid #3B82F6",
+        "background": "#FFFFFF",
+        "description": "Estado ativo da tab"
+      },
+      "tabInactive": {
+        "color": "#6B7280",
+        "hoverBackground": "#F9FAFB",
+        "description": "Estado inativo com hover"
+      }
+    },
+
+    "buttons": {
+      "primary": {
+        "background": "#F97316",
+        "backgroundHover": "#EA580C",
+        "backgroundActive": "#C2410C",
+        "color": "#FFFFFF",
+        "height": "40px",
+        "padding": "0 20px",
+        "borderRadius": "6px",
+        "fontWeight": "500",
+        "fontSize": "14px",
+        "shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        "description": "Botão primário laranja (Abrir Ordem)"
+      },
+      "outline": {
+        "background": "#FFFFFF",
+        "backgroundHover": "#F9FAFB",
+        "color": "#374151",
+        "border": "1px solid #D1D5DB",
+        "height": "40px",
+        "padding": "0 16px",
+        "borderRadius": "6px",
+        "fontWeight": "500",
+        "fontSize": "14px",
+        "description": "Botão secundário (Filtros, Imprimir)"
+      },
+      "success": {
+        "background": "#10B981",
+        "backgroundHover": "#059669",
+        "color": "#FFFFFF",
+        "height": "40px",
+        "padding": "0 16px",
+        "borderRadius": "6px",
+        "fontWeight": "500",
+        "fontSize": "14px",
+        "description": "Botão de sucesso (Finalizar em Lote)"
+      },
+      "destructive": {
+        "background": "transparent",
+        "backgroundHover": "#FEF2F2",
+        "color": "#DC2626",
+        "border": "1px solid #FCA5A5",
+        "height": "40px",
+        "padding": "0 16px",
+        "borderRadius": "6px",
+        "fontWeight": "500",
+        "fontSize": "14px",
+        "description": "Botão destrutivo (Deletar)"
+      },
+      "ghost": {
+        "background": "transparent",
+        "backgroundHover": "#F9FAFB",
+        "color": "#6B7280",
+        "height": "36px",
+        "padding": "0 8px",
+        "borderRadius": "6px",
+        "description": "Botão discreto para ações terciárias"
+      }
+    },
+
+    "inputs": {
+      "search": {
+        "height": "40px",
+        "padding": "0 12px 0 40px",
+        "background": "#FFFFFF",
+        "border": "1px solid #D1D5DB",
+        "borderRadius": "6px",
+        "fontSize": "14px",
+        "placeholderColor": "#9CA3AF",
+        "focusBorder": "#F97316",
+        "focusRing": "0 0 0 3px rgba(249, 115, 22, 0.1)",
+        "iconSize": "20px",
+        "iconColor": "#9CA3AF",
+        "iconPosition": "left 12px",
+        "description": "Campo de busca com ícone à esquerda"
+      },
+      "checkbox": {
+        "size": "18px",
+        "borderRadius": "4px",
+        "border": "2px solid #D1D5DB",
+        "checkedBackground": "#F97316",
+        "checkedBorder": "#F97316",
+        "checkmarkColor": "#FFFFFF",
+        "hoverBorder": "#F97316",
+        "description": "Checkbox com cor primária laranja"
+      }
+    },
+
+    "table": {
+      "container": {
+        "background": "#FFFFFF",
+        "borderRadius": "8px",
+        "border": "1px solid #E5E7EB",
+        "shadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+        "description": "Container principal da tabela"
+      },
+      "header": {
+        "background": "#F9FAFB",
+        "height": "48px",
+        "padding": "0 20px",
+        "borderBottom": "1px solid #E5E7EB",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "color": "#6B7280",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.05em",
+        "description": "Cabeçalho com visual discreto e organizado"
+      },
+      "row": {
+        "height": "72px",
+        "padding": "0 20px",
+        "borderBottom": "1px solid #F1F3F5",
+        "background": "#FFFFFF",
+        "backgroundHover": "#F9FAFB",
+        "backgroundSelected": "#FEF3C7",
+        "transition": "background-color 150ms ease",
+        "description": "Linha com altura maior para conteúdo composto"
+      },
+      "rowUrgent": {
+        "borderLeft": "3px solid #DC2626",
+        "paddingLeft": "17px",
+        "description": "Indicador visual de urgência (atrasado)"
+      },
+      "cell": {
+        "fontSize": "14px",
+        "color": "#1F2937",
+        "verticalAlign": "middle",
+        "padding": "12px 0",
+        "description": "Células com padding vertical para conteúdo empilhado"
+      },
+      "cellStacked": {
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "4px",
+        "justifyContent": "center",
+        "description": "Células com conteúdo empilhado vertical"
+      }
+    },
+
+    "badge": {
+      "base": {
+        "height": "22px",
+        "padding": "4px 10px",
+        "borderRadius": "11px",
+        "fontSize": "11px",
+        "fontWeight": "500",
+        "display": "inline-flex",
+        "alignItems": "center",
+        "gap": "4px",
+        "whiteSpace": "nowrap",
+        "description": "Badge pill base"
+      },
+      "withIcon": {
+        "paddingLeft": "8px",
+        "iconSize": "14px",
+        "description": "Badge com ícone à esquerda"
+      },
+      "statusVariants": {
+        "note": "Ver colorPalette.serviceStatus para cores específicas"
+      }
+    },
+
+    "orderNumber": {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": "6px",
+      "numberStyle": {
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "color": "#1F2937",
+        "letterSpacing": "0.01em"
+      },
+      "badgeStyle": {
+        "alignSelf": "flex-start"
+      },
+      "description": "Componente composto: número + badge de status"
+    },
+
+    "dateTime": {
+      "display": "flex",
+      "flexDirection": "column",
+      "gap": "2px",
+      "dateStyle": {
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "color": "#1F2937"
+      },
+      "timeStyle": {
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "#6B7280"
+      },
+      "description": "Componente composto: data + hora"
+    },
+
+    "dropdown": {
+      "trigger": {
+        "size": "36px",
+        "borderRadius": "6px",
+        "background": "transparent",
+        "backgroundHover": "#F9FAFB",
+        "iconColor": "#6B7280",
+        "iconColorHover": "#374151"
+      },
+      "menu": {
+        "background": "#FFFFFF",
+        "borderRadius": "8px",
+        "border": "1px solid #E5E7EB",
+        "shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+        "padding": "4px",
+        "minWidth": "200px",
+        "maxHeight": "320px"
+      },
+      "item": {
+        "height": "36px",
+        "padding": "0 12px",
+        "borderRadius": "4px",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "#374151",
+        "backgroundHover": "#F9FAFB",
+        "backgroundActive": "#FEF3C7",
+        "gap": "10px",
+        "iconSize": "18px"
+      },
+      "itemDestructive": {
+        "color": "#DC2626",
+        "backgroundHover": "#FEF2F2"
+      },
+      "divider": {
+        "height": "1px",
+        "background": "#E5E7EB",
+        "margin": "4px 0"
+      },
+      "description": "Menu dropdown com opções contextuais"
+    },
+
+    "selectionBar": {
+      "background": "#FEF3C7",
+      "border": "1px solid #FDE68A",
+      "borderRadius": "8px",
+      "padding": "12px 20px",
+      "marginBottom": "16px",
+      "height": "56px",
+      "display": "flex",
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "shadow": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "animation": "slideDown 200ms ease-out",
+      "textColor": "#92400E",
+      "textWeight": "500",
+      "description": "Barra de ações para seleção múltipla"
+    },
+
+    "pagination": {
+      "button": {
+        "size": "36px",
+        "borderRadius": "6px",
+        "background": "#FFFFFF",
+        "backgroundHover": "#F9FAFB",
+        "backgroundActive": "#F97316",
+        "color": "#374151",
+        "colorActive": "#FFFFFF",
+        "border": "1px solid #E5E7EB",
+        "fontWeight": "500",
+        "fontSize": "14px",
+        "disabledOpacity": "0.4"
+      },
+      "container": {
+        "display": "flex",
+        "gap": "4px",
+        "alignItems": "center"
+      },
+      "description": "Paginação com destaque laranja para página ativa"
+    },
+
+    "icons": {
+      "size": "20px",
+      "strokeWidth": "2px",
+      "color": "#6B7280",
+      "colorHover": "#374151",
+      "colorPrimary": "#F97316",
+      "colorSuccess": "#10B981",
+      "colorDanger": "#DC2626",
+      "colorInfo": "#3B82F6",
+      "description": "Ícones Lucide com cores semânticas"
+    },
+
+    "tooltip": {
+      "background": "#1F2937",
+      "color": "#FFFFFF",
+      "fontSize": "12px",
+      "padding": "6px 10px",
+      "borderRadius": "6px",
+      "maxWidth": "250px",
+      "shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+      "description": "Tooltip para descrições completas de serviços"
+    }
+  },
+
+  "interactions": {
+    "transitions": {
+      "fast": "100ms ease",
+      "default": "150ms ease",
+      "slow": "200ms ease-out",
+      "description": "Transições rápidas para feedback imediato"
+    },
+    "animations": {
+      "slideDown": "slideDown 200ms ease-out",
+      "fadeIn": "fadeIn 150ms ease",
+      "pulse": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      "description": "Animações para entrada de elementos"
+    },
+    "hover": {
+      "cursor": "pointer",
+      "scale": "none",
+      "description": "Hover com mudança de cor, sem scale"
+    },
+    "focus": {
+      "outline": "2px solid #F97316",
+      "outlineOffset": "2px",
+      "description": "Estados de foco com cor primária laranja"
+    }
+  },
+
+  "patterns": {
+    "statusPriority": {
+      "visual": {
+        "critical": "Border left vermelha + badge vermelho",
+        "high": "Badge laranja com ícone de alerta",
+        "normal": "Badge azul padrão",
+        "complete": "Badge verde"
+      },
+      "hierarchy": "Urgência > Status do serviço > Informações secundárias",
+      "description": "Sistema visual de priorização"
+    },
+
+    "emptyState": {
+      "container": {
+        "padding": "48px 24px",
+        "textAlign": "center",
+        "background": "#FFFFFF",
+        "borderRadius": "8px"
+      },
+      "icon": {
+        "size": "64px",
+        "color": "#D1D5DB",
+        "marginBottom": "16px"
+      },
+      "title": {
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "color": "#1F2937",
+        "marginBottom": "8px"
+      },
+      "description": {
+        "fontSize": "14px",
+        "color": "#6B7280",
+        "marginBottom": "24px"
+      },
+      "action": {
+        "type": "primary button"
+      },
+      "description": "Empty state amigável e orientado a ação"
+    },
+
+    "loadingState": {
+      "skeleton": {
+        "background": "#F1F3F5",
+        "animation": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "borderRadius": "4px"
+      },
+      "spinner": {
+        "color": "#F97316",
+        "size": "24px"
+      },
+      "description": "Loading states com skeleton e cor primária"
+    },
+
+    "filterIndicator": {
+      "badge": {
+        "background": "#FED7AA",
+        "color": "#C2410C",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "padding": "2px 8px",
+        "borderRadius": "10px",
+        "marginLeft": "8px"
+      },
+      "clearButton": {
+        "fontSize": "13px",
+        "color": "#F97316",
+        "textDecoration": "underline",
+        "cursor": "pointer"
+      },
+      "description": "Indicador de filtros ativos"
+    }
+  },
+
+  "accessibility": {
+    "contrast": {
+      "minimumRatio": "4.5:1",
+      "largeTextRatio": "3:1",
+      "statusIndicators": "Não depender apenas de cor, usar ícones e texto",
+      "description": "WCAG 2.1 Level AA compliance"
+    },
+    "touchTargets": {
+      "minimumSize": "44x44px",
+      "spacing": "8px",
+      "description": "Alvos adequados para toque em mobile"
+    },
+    "keyboard": {
+      "navigation": "Tab, Shift+Tab, Arrow keys para tabela",
+      "activation": "Enter, Space",
+      "dropdown": "Arrow keys para navegação, Enter para selecionar",
+      "description": "Navegação completa por teclado"
+    },
+    "screenReader": {
+      "labels": "Todos os ícones com aria-label",
+      "status": "Live regions para mudanças de status",
+      "description": "Suporte completo para leitores de tela"
+    }
+  },
+
+  "responsive": {
+    "mobile": {
+      "layout": "Card-based layout",
+      "visibleFields": ["Nº da Ordem", "Cliente", "Status", "Data"],
+      "actions": "Botão único que abre action sheet",
+      "tabs": "Scroll horizontal",
+      "search": "Full width, margin bottom 12px",
+      "description": "Interface otimizada para mobile"
+    },
+    "tablet": {
+      "layout": "Table with horizontal scroll if needed",
+      "hiddenColumns": ["Serviço"],
+      "showOnExpand": true,
+      "description": "Tablet mantém tabela com scroll"
+    },
+    "desktop": {
+      "layout": "Full table layout",
+      "allColumns": true,
+      "description": "Desktop com todas as colunas visíveis"
+    }
+  },
+
+  "dataVisualization": {
+    "timeIndicators": {
+      "format": "X dias restantes / Atrasado há X dias",
+      "colors": "Verde (5+ dias) → Amarelo (1-4 dias) → Vermelho (atrasado)",
+      "icons": "Clock (normal) → AlertCircle (atrasado)",
+      "description": "Visualização clara do status temporal"
+    },
+    "statusFlow": {
+      "sequence": "Em Aberto → Em Progresso → Finalizado",
+      "alternates": "Cancelado, Atrasado (paralelo)",
+      "description": "Fluxo de status das ordens"
+    },
+    "density": {
+      "comfortable": "72px row height (recomendado)",
+      "compact": "56px row height",
+      "description": "Densidade confortável para múltiplas linhas de info"
+    }
+  },
+
+  "contextualActions": {
+    "newOrder": {
+      "context": "Sempre visível no header",
+      "emphasis": "Primary button laranja",
+      "shortcut": "Ctrl/Cmd + N"
+    },
+    "executeOrder": {
+      "context": "Apenas para status 'Em Aberto'",
+      "emphasis": "Primeira opção no dropdown",
+      "icon": "Play"
+    },
+    "batchActions": {
+      "context": "Visível apenas com seleção",
+      "emphasis": "Barra destacada amarela",
+      "actions": ["Imprimir em Lote", "Finalizar em Lote", "Deletar"]
+    },
+    "description": "Ações contextuais baseadas em estado"
+  }
+}
