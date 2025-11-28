@@ -44,7 +44,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
     >
       <div className="h-full bg-white dark:bg-card rounded-[36px] shadow-lg flex flex-col overflow-hidden">
         {/* Top Section - University Branding */}
-        <div className={`pt-10 flex flex-col mb-8 ${sidebarPadding}`}>
+        <div className={`pt-4 flex flex-col mb-4 ${sidebarPadding}`}>
           {/* University Logo - Letter A with green gradient */}
           <div className={`${iconColumnWidth} h-12 flex items-center justify-center mb-2`}>
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center flex-shrink-0">
@@ -128,7 +128,7 @@ export default function UniversitySidebar({ isExpanded, onToggle }: UniversitySi
         </nav>
 
         {/* Bottom Section - Settings & Logout */}
-        <div className={`pb-10 flex flex-col space-y-2 ${sidebarPadding}`}>
+        <div className={`pb-4 flex flex-col space-y-2 ${sidebarPadding}`}>
           {bottomItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeItem === item.id;
