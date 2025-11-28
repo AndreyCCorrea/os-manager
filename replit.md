@@ -4,7 +4,27 @@
 
 This is a modern university dashboard web application built with React, TypeScript, and Express. The application features a clean, utility-focused interface with a fixed sidebar navigation and a gradient-styled main content area. It's designed to provide an efficient and visually appealing dashboard experience for university-related tasks and information display.
 
-The project is branded as "OAK University" and follows a professional academic aesthetic with teal/emerald gradient themes. The current implementation showcases order management statistics (Open Orders, In Execution, Finished) as the primary dashboard content.
+The project is branded as "OAK University" and follows a professional academic aesthetic with teal/emerald gradient themes. The current implementation includes:
+- Dashboard home with order management statistics (Open Orders, In Execution, Finished)
+- Clients management section with full CRUD capabilities
+
+## Recent Changes
+
+### Clients Section Implementation (November 2025)
+- Added Client data model to shared/schema.ts with fields: id, name, email, phone, document, personType (fisica/juridica), status, avatarUrl, createdAt
+- Created ClientsContent component with:
+  - Header with title and "Novo Cliente" primary action button
+  - Selection bar for bulk edit/delete operations when items are selected
+  - Search input and filters button
+  - Data table with columns: checkbox, cliente (avatar + name), contato (email + phone), documento, tipo (badge)
+  - Row action dropdown menu (view, edit, delete)
+  - Pagination controls
+  - Empty state for no results
+- Updated Dashboard page to support multiple content views (home/users)
+- Updated UniversitySidebar to handle navigation state with callbacks
+- All interactive elements include data-testid attributes for testing
+- Uses shadcn's built-in hover/elevation system (no custom hover overrides)
+- Portuguese language labels throughout (Clientes, Usuários, Novo Cliente, etc.)
 
 ## User Preferences
 
