@@ -120,7 +120,8 @@ export default function ClientsContent() {
   };
 
   return (
-    <div className="p-6 h-screen overflow-auto bg-[#F8F9FA]">
+    <div className="p-6 h-full">
+      <div className="h-full bg-white/90 backdrop-blur-sm rounded-[36px] shadow-lg p-6 overflow-auto">
       {/* Header */}
       <div className="flex items-center justify-between gap-4 mb-6">
         <div>
@@ -389,6 +390,7 @@ export default function ClientsContent() {
             </div>
           </div>
         )}
+      </div>
       </div>
     </div>
   );
