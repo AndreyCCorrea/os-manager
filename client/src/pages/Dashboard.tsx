@@ -4,6 +4,7 @@ import DashboardContent from "@/components/DashboardContent";
 import ClientsContent from "@/components/ClientsContent";
 import ServiceOrdersContent from "@/components/ServiceOrdersContent";
 import QuotesContent from "@/components/QuotesContent";
+import SettingsContent from "@/components/SettingsContent";
 
 export default function Dashboard() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -25,6 +26,8 @@ export default function Dashboard() {
         return <ServiceOrdersContent />;
       case "calculator":
         return <QuotesContent />;
+      case "settings":
+        return <SettingsContent />;
       case "home":
       default:
         return <DashboardContent />;

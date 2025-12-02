@@ -1,0 +1,712 @@
+{
+  "designSystem": {
+    "name": "Dashboard Configurações - Design System",
+    "version": "1.0",
+    "description": "Sistema de design para página de configurações com layout card-based, navegação modular e organização por categorias",
+    "scope": "Main content area only - sidebar já está finalizada"
+  },
+
+  "designPrinciples": {
+    "cardBased": "Layout baseado em cards modulares que agrupam configurações relacionadas",
+    "colorCoding": "Cada categoria possui cor temática única para identificação rápida",
+    "scannable": "Interface escaneável com ícones claros e hierarquia visual forte",
+    "navigational": "Cards funcionam como pontos de navegação para sub-seções detalhadas",
+    "contextual": "Informações contextuais (badges, status, contadores) visíveis nos cards",
+    "progressive": "Disclosure progressivo - visão geral nos cards, detalhes nas sub-páginas"
+  },
+
+  "colorPalette": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F8F9FA",
+      "tertiary": "#F1F3F5",
+      "description": "Backgrounds neutros que permitem destaque das cores temáticas"
+    },
+    "text": {
+      "primary": "#1F2937",
+      "secondary": "#374151",
+      "tertiary": "#6B7280",
+      "muted": "#9CA3AF",
+      "description": "Hierarquia de texto com contraste adequado"
+    },
+    "borders": {
+      "subtle": "#E5E7EB",
+      "default": "#D1D5DB",
+      "strong": "#9CA3AF",
+      "description": "Bordas que organizam cards sem dominar"
+    },
+    "categoryColors": {
+      "empresa": {
+        "iconBackground": "#EFF6FF",
+        "iconColor": "#3B82F6",
+        "accentColor": "#3B82F6",
+        "description": "Azul - Configurações empresariais"
+      },
+      "assinatura": {
+        "iconBackground": "#FEF3C7",
+        "iconColor": "#F59E0B",
+        "accentColor": "#F59E0B",
+        "planBackground": "#FFFBEB",
+        "planBorder": "#FDE68A",
+        "planText": "#92400E",
+        "description": "Amarelo/Âmbar - Planos e pagamentos"
+      },
+      "suporte": {
+        "iconBackground": "#D1FAE5",
+        "iconColor": "#10B981",
+        "accentColor": "#10B981",
+        "onlineBackground": "#D1FAE5",
+        "onlineText": "#065F46",
+        "description": "Verde - Suporte e ajuda"
+      },
+      "preferencias": {
+        "iconBackground": "#F3E8FF",
+        "iconColor": "#9333EA",
+        "accentColor": "#9333EA",
+        "description": "Roxo - Preferências do usuário"
+      },
+      "seguranca": {
+        "iconBackground": "#FEE2E2",
+        "iconColor": "#DC2626",
+        "accentColor": "#DC2626",
+        "description": "Vermelho - Segurança e privacidade"
+      },
+      "integracao": {
+        "iconBackground": "#E0E7FF",
+        "iconColor": "#6366F1",
+        "accentColor": "#6366F1",
+        "description": "Índigo - Integrações e API"
+      }
+    },
+    "interactive": {
+      "primary": "#3B82F6",
+      "primaryHover": "#2563EB",
+      "primaryActive": "#1D4ED8",
+      "description": "Cor padrão para interações"
+    },
+    "status": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#DC2626",
+      "info": "#3B82F6",
+      "description": "Cores semânticas para status"
+    },
+    "badges": {
+      "info": {
+        "background": "#EFF6FF",
+        "text": "#1E40AF",
+        "description": "Badge azul para informações"
+      },
+      "success": {
+        "background": "#D1FAE5",
+        "text": "#065F46",
+        "description": "Badge verde para status positivo"
+      },
+      "warning": {
+        "background": "#FEF3C7",
+        "text": "#92400E",
+        "description": "Badge amarelo para avisos"
+      }
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "primary": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      "description": "System fonts para consistência"
+    },
+    "scale": {
+      "h1": {
+        "size": "24px",
+        "weight": "600",
+        "lineHeight": "32px",
+        "letterSpacing": "-0.02em",
+        "usage": "Título da página (Configurações)",
+        "color": "#1F2937"
+      },
+      "pageDescription": {
+        "size": "14px",
+        "weight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Descrição abaixo do título",
+        "color": "#6B7280"
+      },
+      "cardTitle": {
+        "size": "18px",
+        "weight": "600",
+        "lineHeight": "24px",
+        "letterSpacing": "-0.01em",
+        "usage": "Título do card de categoria",
+        "color": "#1F2937"
+      },
+      "cardDescription": {
+        "size": "14px",
+        "weight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Descrição do card",
+        "color": "#6B7280"
+      },
+      "buttonLabel": {
+        "size": "14px",
+        "weight": "500",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Labels dos botões navegacionais",
+        "color": "#374151"
+      },
+      "badge": {
+        "size": "12px",
+        "weight": "500",
+        "lineHeight": "16px",
+        "letterSpacing": "0.01em",
+        "usage": "Badges de status e contadores"
+      },
+      "secondaryInfo": {
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "16px",
+        "letterSpacing": "0",
+        "usage": "Informações secundárias (emails, etc)",
+        "color": "#6B7280"
+      },
+      "planName": {
+        "size": "16px",
+        "weight": "600",
+        "lineHeight": "22px",
+        "letterSpacing": "0",
+        "usage": "Nome do plano de assinatura",
+        "color": "#92400E"
+      },
+      "settingLabel": {
+        "size": "14px",
+        "weight": "500",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Labels de configurações individuais",
+        "color": "#374151"
+      }
+    }
+  },
+
+  "spacing": {
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "16px",
+      "xl": "24px",
+      "2xl": "32px",
+      "3xl": "48px",
+      "description": "Escala de espaçamento em múltiplos de 4px"
+    },
+    "componentSpacing": {
+      "cardPadding": "24px",
+      "cardGap": "24px",
+      "buttonHeight": "44px",
+      "buttonGap": "8px",
+      "iconContainerSize": "48px",
+      "pageContentPadding": "24px",
+      "headerMarginBottom": "32px",
+      "description": "Espaçamentos específicos dos componentes"
+    },
+    "internalSpacing": {
+      "cardHeaderMarginBottom": "20px",
+      "titleDescriptionGap": "8px",
+      "iconLabelGap": "12px",
+      "badgeIconGap": "4px",
+      "settingRowPadding": "12px",
+      "description": "Espaçamentos internos dos componentes"
+    }
+  },
+
+  "layout": {
+    "mainContent": {
+      "note": "SIDEBAR JÁ ESTÁ PRONTA - Foco apenas no main content",
+      "padding": "24px",
+      "background": "#F8F9FA",
+      "maxWidth": "1200px",
+      "description": "Área de conteúdo principal com largura máxima"
+    },
+    "grid": {
+      "mobile": {
+        "columns": 1,
+        "gap": "24px",
+        "description": "Mobile: cards empilhados"
+      },
+      "tablet": {
+        "columns": 2,
+        "gap": "24px",
+        "description": "Tablet: 2 cards por linha"
+      },
+      "desktop": {
+        "columns": 3,
+        "gap": "24px",
+        "description": "Desktop: 3 cards por linha"
+      }
+    },
+    "header": {
+      "marginBottom": "32px",
+      "titleDescriptionGap": "8px",
+      "description": "Header da página"
+    }
+  },
+
+  "components": {
+    "settingsCard": {
+      "container": {
+        "background": "#FFFFFF",
+        "border": "1px solid #E5E7EB",
+        "borderRadius": "8px",
+        "padding": "24px",
+        "shadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+        "transition": "all 200ms ease",
+        "description": "Container principal do card"
+      },
+      "hover": {
+        "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        "transform": "translateY(-2px)",
+        "borderColor": "#D1D5DB",
+        "description": "Estado hover com elevação sutil"
+      },
+      "iconContainer": {
+        "size": "48px",
+        "borderRadius": "12px",
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "marginBottom": "16px",
+        "description": "Container do ícone colorido"
+      },
+      "icon": {
+        "size": "24px",
+        "strokeWidth": "2px",
+        "description": "Ícone Lucide dentro do container"
+      },
+      "title": {
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "color": "#1F2937",
+        "marginBottom": "8px",
+        "description": "Título do card"
+      },
+      "description": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "color": "#6B7280",
+        "lineHeight": "1.5",
+        "marginBottom": "20px",
+        "description": "Descrição do card"
+      }
+    },
+
+    "navigationButton": {
+      "base": {
+        "width": "100%",
+        "height": "44px",
+        "padding": "0 16px",
+        "background": "#FFFFFF",
+        "backgroundHover": "#F9FAFB",
+        "backgroundActive": "#F3F4F6",
+        "border": "1px solid #E5E7EB",
+        "borderRadius": "6px",
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": "space-between",
+        "cursor": "pointer",
+        "transition": "all 150ms ease",
+        "description": "Botão navegacional base"
+      },
+      "leftContent": {
+        "display": "flex",
+        "alignItems": "center",
+        "gap": "12px",
+        "description": "Conteúdo esquerdo (ícone + label)"
+      },
+      "icon": {
+        "size": "20px",
+        "color": "#6B7280",
+        "strokeWidth": "2px",
+        "description": "Ícone à esquerda"
+      },
+      "label": {
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "color": "#374151",
+        "description": "Label do botão"
+      },
+      "rightContent": {
+        "display": "flex",
+        "alignItems": "center",
+        "gap": "8px",
+        "description": "Conteúdo direito (badge + chevron)"
+      },
+      "chevron": {
+        "size": "20px",
+        "color": "#9CA3AF",
+        "description": "Ícone chevron indicando navegação"
+      }
+    },
+
+    "badge": {
+      "base": {
+        "padding": "2px 8px",
+        "borderRadius": "10px",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "display": "inline-flex",
+        "alignItems": "center",
+        "gap": "4px",
+        "whiteSpace": "nowrap",
+        "description": "Badge base"
+      },
+      "withDot": {
+        "before": {
+          "content": "dot",
+          "width": "8px",
+          "height": "8px",
+          "borderRadius": "50%",
+          "description": "Dot indicador de status"
+        }
+      }
+    },
+
+    "planDisplay": {
+      "container": {
+        "background": "#FFFBEB",
+        "border": "1px solid #FDE68A",
+        "borderRadius": "6px",
+        "padding": "16px",
+        "marginBottom": "16px",
+        "description": "Container de exibição do plano atual"
+      },
+      "planName": {
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "#92400E",
+        "marginBottom": "4px",
+        "description": "Nome do plano"
+      },
+      "planStatus": {
+        "display": "flex",
+        "alignItems": "center",
+        "gap": "6px",
+        "fontSize": "13px",
+        "color": "#6B7280",
+        "description": "Status e data de validade"
+      },
+      "statusIcon": {
+        "size": "16px",
+        "color": "#10B981",
+        "description": "Ícone de check indicando ativo"
+      }
+    },
+
+    "preferencesCard": {
+      "grid": {
+        "desktop": {
+          "gridColumn": "span 2",
+          "description": "Card de preferências ocupa 2 colunas no desktop"
+        },
+        "tablet": {
+          "gridColumn": "span 2",
+          "description": "Card de preferências full width no tablet"
+        }
+      },
+      "content": {
+        "display": "grid",
+        "gridTemplateColumns": {
+          "mobile": "1fr",
+          "desktop": "1fr 1fr"
+        },
+        "gap": "12px",
+        "description": "Grid interno de configurações"
+      }
+    },
+
+    "settingRow": {
+      "base": {
+        "display": "flex",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "padding": "12px",
+        "borderRadius": "6px",
+        "backgroundHover": "#F9FAFB",
+        "transition": "background 150ms ease",
+        "description": "Linha de configuração individual"
+      },
+      "left": {
+        "display": "flex",
+        "alignItems": "center",
+        "gap": "10px",
+        "description": "Lado esquerdo (ícone + label)"
+      },
+      "icon": {
+        "size": "20px",
+        "color": "#6B7280",
+        "strokeWidth": "2px",
+        "description": "Ícone da configuração"
+      },
+      "label": {
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "color": "#374151",
+        "description": "Label da configuração"
+      },
+      "control": {
+        "description": "Toggle, Select ou outro controle"
+      }
+    },
+
+    "toggleSwitch": {
+      "track": {
+        "width": "44px",
+        "height": "24px",
+        "borderRadius": "12px",
+        "backgroundOff": "#E5E7EB",
+        "backgroundOn": "#3B82F6",
+        "transition": "background 200ms ease",
+        "description": "Track do toggle switch"
+      },
+      "thumb": {
+        "size": "20px",
+        "borderRadius": "50%",
+        "background": "#FFFFFF",
+        "shadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
+        "translateOff": "2px",
+        "translateOn": "22px",
+        "transition": "transform 200ms ease",
+        "description": "Thumb do toggle switch"
+      }
+    },
+
+    "select": {
+      "height": "36px",
+      "minWidth": "140px",
+      "padding": "0 12px",
+      "background": "#FFFFFF",
+      "border": "1px solid #D1D5DB",
+      "borderRadius": "6px",
+      "fontSize": "14px",
+      "color": "#374151",
+      "focusBorder": "#3B82F6",
+      "focusRing": "0 0 0 3px rgba(59, 130, 246, 0.1)",
+      "description": "Select dropdown"
+    },
+
+    "externalLinkIcon": {
+      "size": "18px",
+      "color": "#9CA3AF",
+      "description": "Ícone para links externos"
+    }
+  },
+
+  "interactions": {
+    "transitions": {
+      "fast": "100ms ease",
+      "default": "150ms ease",
+      "slow": "200ms ease",
+      "description": "Durações de transição"
+    },
+    "hover": {
+      "card": {
+        "transform": "translateY(-2px)",
+        "shadowIncrease": true,
+        "borderChange": true,
+        "description": "Card hover com elevação"
+      },
+      "button": {
+        "backgroundChange": "#F9FAFB",
+        "description": "Botão hover sutil"
+      },
+      "settingRow": {
+        "backgroundChange": "#F9FAFB",
+        "description": "Setting row hover"
+      }
+    },
+    "focus": {
+      "outline": "2px solid #3B82F6",
+      "outlineOffset": "2px",
+      "description": "Estados de foco visíveis"
+    },
+    "active": {
+      "transform": "scale(0.98)",
+      "description": "Feedback tátil no click"
+    }
+  },
+
+  "patterns": {
+    "cardStructure": {
+      "anatomy": [
+        "Icon Container (colorido, tema da categoria)",
+        "Title (18px, bold)",
+        "Description (14px, cinza)",
+        "Content Area (opcional, ex: plan display)",
+        "Actions List (botões navegacionais)"
+      ],
+      "consistency": "Todos os cards seguem a mesma estrutura visual",
+      "description": "Anatomia consistente dos cards"
+    },
+
+    "navigationPattern": {
+      "indicator": "ChevronRight indica que o botão navega para outra página",
+      "externalLink": "ExternalLink indica que abre em nova aba/janela",
+      "contextualInfo": "Badges e texto secundário fornecem contexto adicional",
+      "description": "Padrão de navegação e affordances"
+    },
+
+    "colorTheming": {
+      "rule": "Cada categoria tem cor única aplicada ao icon container",
+      "application": "Cor também usada em badges e elementos de destaque",
+      "consistency": "Mantém consistência com outras seções do sistema",
+      "description": "Sistema de cores temáticas por categoria"
+    },
+
+    "emptyState": {
+      "note": "Configurações sempre têm conteúdo, não necessita empty state",
+      "description": "N/A para esta seção"
+    },
+
+    "loadingState": {
+      "skeleton": {
+        "background": "#F1F3F5",
+        "animation": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "description": "Skeleton cards durante carregamento"
+      },
+      "cardCount": 3,
+      "description": "Mostrar skeleton de 3 cards durante load"
+    },
+
+    "successFeedback": {
+      "toast": {
+        "background": "#D1FAE5",
+        "border": "1px solid #6EE7B7",
+        "color": "#065F46",
+        "icon": "CheckCircle",
+        "message": "Configurações salvas com sucesso",
+        "duration": "3000ms",
+        "position": "top-right",
+        "description": "Toast notification para sucesso"
+      }
+    }
+  },
+
+  "accessibility": {
+    "contrast": {
+      "minimumRatio": "4.5:1",
+      "largeTextRatio": "3:1",
+      "description": "WCAG 2.1 Level AA"
+    },
+    "touchTargets": {
+      "minimumSize": "44x44px",
+      "buttonHeight": "44px",
+      "description": "Alvos adequados para mobile"
+    },
+    "keyboard": {
+      "navigation": "Tab, Shift+Tab",
+      "activation": "Enter, Space",
+      "description": "Navegação completa por teclado"
+    },
+    "screenReader": {
+      "cardTitles": "Usar heading apropriado (h2)",
+      "buttonLabels": "Labels descritivos",
+      "iconLabels": "aria-label em todos os ícones",
+      "description": "Suporte para leitores de tela"
+    },
+    "focusManagement": {
+      "visibleFocus": "Outline azul de 2px",
+      "focusTrap": "Dentro de modals se aplicável",
+      "description": "Gerenciamento de foco"
+    }
+  },
+
+  "responsive": {
+    "mobile": {
+      "gridColumns": 1,
+      "cardWidth": "100%",
+      "stackOrder": "Empresa → Assinatura → Suporte → Preferências",
+      "buttonFullWidth": true,
+      "description": "Mobile: cards empilhados verticalmente"
+    },
+    "tablet": {
+      "gridColumns": 2,
+      "cardWidth": "calc(50% - 12px)",
+      "preferencesSpan": "full width",
+      "description": "Tablet: 2 colunas, preferências full width"
+    },
+    "desktop": {
+      "gridColumns": 3,
+      "cardWidth": "calc(33.333% - 16px)",
+      "maxWidth": "1200px",
+      "preferencesSpan": "2 columns",
+      "description": "Desktop: 3 colunas com largura máxima"
+    },
+    "breakpoints": {
+      "mobile": "0-640px",
+      "tablet": "641-1024px",
+      "desktop": "1025px+",
+      "description": "Breakpoints do sistema"
+    }
+  },
+
+  "categoryDefinitions": {
+    "empresa": {
+      "title": "Configurações da Empresa",
+      "description": "Gerencie informações e preferências da empresa",
+      "color": "blue",
+      "icon": "Building2",
+      "actions": [
+        "Dados da Empresa",
+        "Usuários Ativos",
+        "Notificações"
+      ]
+    },
+    "assinatura": {
+      "title": "Assinatura e Plano",
+      "description": "Visualize e gerencie seu plano de assinatura",
+      "color": "amber",
+      "icon": "CreditCard",
+      "hasSpecialContent": "Plan Display",
+      "actions": [
+        "Gerenciar Assinatura",
+        "Histórico de Pagamentos"
+      ]
+    },
+    "suporte": {
+      "title": "Suporte",
+      "description": "Entre em contato com nossa equipe de suporte",
+      "color": "green",
+      "icon": "HelpCircle",
+      "actions": [
+        "Central de Ajuda (external)",
+        "Enviar Email",
+        "Chat ao Vivo"
+      ]
+    },
+    "preferencias": {
+      "title": "Preferências",
+      "description": "Personalize sua experiência no sistema",
+      "color": "purple",
+      "icon": "Sliders",
+      "layout": "wide card with settings grid",
+      "settings": [
+        "Tema da Interface",
+        "Idioma",
+        "Fuso Horário",
+        "Notificações por Email"
+      ]
+    }
+  },
+
+  "implementationNotes": {
+    "iconLibrary": "Lucide React",
+    "componentLibrary": "shadcn/ui compatible",
+    "stateManagement": "Consider React Context for settings",
+    "routing": "Each navigation button should have proper href/onClick",
+    "dataFetching": "Load settings on mount, show skeleton during fetch",
+    "persistence": "Save settings changes immediately or with explicit save button",
+    "validation": "Validate form inputs before saving",
+    "errorHandling": "Show toast for errors, inline validation for forms"
+  }
+}
