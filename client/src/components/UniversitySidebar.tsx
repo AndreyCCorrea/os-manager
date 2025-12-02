@@ -216,7 +216,7 @@ export default function UniversitySidebar({ isExpanded, onToggle, activeItem, on
       {/* Logout Confirmation Modal */}
       <Dialog open={showLogoutModal} onOpenChange={setShowLogoutModal}>
         <DialogContent 
-          className="sm:max-w-[400px] bg-white dark:bg-card rounded-[24px] border-0 shadow-xl p-0 overflow-hidden"
+          className="sm:max-w-[400px] bg-white dark:bg-card rounded-[36px] border-0 shadow-xl p-0 overflow-hidden"
           data-testid="modal-logout"
         >
           <div className="p-6">
