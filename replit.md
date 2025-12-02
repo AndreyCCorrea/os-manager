@@ -10,6 +10,13 @@ The project is branded as "OAK University" and follows a professional academic a
 
 ## Recent Changes
 
+### Logout Modal and Red Exit Button (December 2025)
+- Added logout confirmation modal that appears when clicking "Sair" in the sidebar
+- Modal follows the same UI style as the sidebar (rounded corners, clean design)
+- Modal includes warning icon, confirmation text, and Cancel/Confirm buttons
+- Changed logout button color from green/primary to red (always red, not just when selected)
+- Red styling applies to both icon and text label
+
 ### Quotes Section Implementation (December 2025)
 - Created QuotesContent component accessible via "Calculadora" sidebar button
 - Follows design.json design system guidelines for premium fintech aesthetic
