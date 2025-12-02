@@ -10,25 +10,24 @@ The project is branded as "OAK University" and follows a professional academic a
 
 ## Recent Changes
 
-### Settings Section Implementation (December 2025)
-- Created SettingsContent component accessible via "Configurações" sidebar button
-- Follows design.json design system guidelines for premium fintech aesthetic
-- Card-based layout with 6 category cards:
-  - Configurações da Empresa (Blue) - Company data, active users, notifications
-  - Assinatura e Plano (Amber) - Plan display, subscription management, payment history
-  - Suporte (Green) - Help center, email support, live chat with online status
-  - Preferências (Purple) - Theme, language, timezone, email notifications (spans 2 columns)
-  - Segurança (Red) - Password change, 2FA, access history
-  - Integrações (Indigo) - Connected APIs, API documentation, integration logs
-- Features include:
-  - Color-coded category icons following design system
-  - Responsive grid layout (1 col mobile, 2 cols tablet, 3 cols desktop)
-  - Navigation buttons with chevron arrows and external link indicators
-  - Status badges for contextual information
-  - Plan display component with active status
-  - Settings rows with toggle switches and select dropdowns
-  - 44px touch targets for accessibility compliance
-  - Full dark mode support
+### Settings Section Implementation v2.0 (December 2025)
+- Completely redesigned SettingsContent component following design.json v2.0 specifications
+- Vertical stacked layout with single column (max-width 800px) for improved readability
+- 5 category cards in sequential order:
+  1. Configurações da Empresa (Blue) - Company data, active users (12), notifications
+  2. Preferências (Purple) - Theme/language/timezone selects, email notification toggle
+  3. Segurança (Red) - Password change, 2FA status, access history
+  4. Assinatura e Plano (Amber) - Plan display card with "Ativo" status, subscription management
+  5. Suporte (Green) - Help center (external), email support with address, live chat with "Online" status
+- Design system features:
+  - 48x48px icon containers with 12px border radius and category-specific colors
+  - Horizontal card headers with icon + title + description layout
+  - Navigation buttons (44px height) with ChevronRight or ExternalLink indicators
+  - Setting rows with inline controls (Select dropdowns and Toggle switches)
+  - Counter badges (user count) and status badges (with dot indicators)
+  - Plan display component with amber theme and CheckCircle status icon
+  - Secondary text for contextual info (email addresses)
+- Full dark mode support with appropriate color adjustments
 - All interactive elements include data-testid attributes for testing
 - Portuguese language labels with proper accents throughout
 

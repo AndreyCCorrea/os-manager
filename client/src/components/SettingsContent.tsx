@@ -1,58 +1,35 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { 
-  Building2, 
-  CreditCard, 
-  HelpCircle, 
-  Sliders, 
-  Shield, 
-  Plug, 
-  ChevronRight, 
-  ExternalLink,
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Building2,
+  FileText,
   Users,
   Bell,
-  FileText,
-  History,
-  Mail,
-  MessageSquare,
+  Sliders,
   Sun,
-  Moon,
   Globe,
   Clock,
-  CheckCircle2
+  Mail,
+  Shield,
+  Key,
+  Smartphone,
+  History,
+  CreditCard,
+  Receipt,
+  HelpCircle,
+  MessageCircle,
+  ChevronRight,
+  ExternalLink,
+  CheckCircle,
 } from "lucide-react";
-
-interface SettingsCardProps {
-  icon: React.ReactNode;
-  iconBg: string;
-  title: string;
-  description: string;
-  children: React.ReactNode;
-  className?: string;
-}
-
-function SettingsCard({ icon, iconBg, title, description, children, className = "" }: SettingsCardProps) {
-  return (
-    <Card className={`p-6 bg-white dark:bg-card border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 ${className}`}>
-      <div className="mb-4">
-        <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${iconBg}`}>
-          {icon}
-        </div>
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2" data-testid={`text-settings-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-          {title}
-        </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-          {description}
-        </p>
-      </div>
-      <div className="space-y-2">
-        {children}
-      </div>
-    </Card>
-  );
-}
 
 interface NavigationButtonProps {
   icon: React.ReactNode;
@@ -62,12 +39,12 @@ interface NavigationButtonProps {
   onClick?: () => void;
 }
 
-function NavigationButton({ icon, label, badge, isExternal = false, onClick }: NavigationButtonProps) {
+function NavigationButton({ icon, label, badge, isExternal, onClick }: NavigationButtonProps) {
   return (
     <button
       onClick={onClick}
+      className="w-full h-11 px-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md flex items-center justify-between cursor-pointer transition-all duration-150 hover:bg-gray-50 dark:hover:bg-gray-700/50 active:scale-[0.98]"
       data-testid={`button-${label.toLowerCase().replace(/\s+/g, '-')}`}
-      className="w-full h-11 px-4 bg-white dark:bg-card border border-gray-200 dark:border-gray-700 rounded-md flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 active:scale-[0.99] transition-all duration-150"
     >
       <div className="flex items-center gap-3">
         <span className="text-gray-500 dark:text-gray-400">{icon}</span>
@@ -76,7 +53,7 @@ function NavigationButton({ icon, label, badge, isExternal = false, onClick }: N
       <div className="flex items-center gap-2">
         {badge}
         {isExternal ? (
-          <ExternalLink className="w-5 h-5 text-gray-400" />
+          <ExternalLink className="w-[18px] h-[18px] text-gray-400" />
         ) : (
           <ChevronRight className="w-5 h-5 text-gray-400" />
         )}
@@ -93,30 +70,98 @@ interface SettingRowProps {
 
 function SettingRow({ icon, label, control }: SettingRowProps) {
   return (
-    <div className="flex items-center justify-between p-3 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-150">
-      <div className="flex items-center gap-2.5">
+    <div className="flex justify-between items-center py-3 px-4 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-md transition-colors duration-150 hover:bg-gray-100 dark:hover:bg-gray-700/50">
+      <div className="flex items-center gap-3">
         <span className="text-gray-500 dark:text-gray-400">{icon}</span>
         <span className="text-sm font-medium text-gray-700 dark:text-gray-200">{label}</span>
       </div>
-      {control}
+      <div>{control}</div>
+    </div>
+  );
+}
+
+interface SettingsCardProps {
+  icon: React.ReactNode;
+  iconBg: string;
+  title: string;
+  description: string;
+  children: React.ReactNode;
+}
+
+function SettingsCard({ icon, iconBg, title, description, children }: SettingsCardProps) {
+  return (
+    <Card className="w-full p-6 shadow-sm hover:shadow-md transition-shadow duration-150">
+      <div className="flex items-center gap-4 mb-5">
+        <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${iconBg}`}>
+          {icon}
+        </div>
+        <div className="flex flex-col gap-1">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 tracking-tight">{title}</h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{description}</p>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        {children}
+      </div>
+    </Card>
+  );
+}
+
+function CounterBadge({ count, bgColor, textColor, testId }: { count: number; bgColor: string; textColor: string; testId?: string }) {
+  return (
+    <span className={`px-2 py-0.5 rounded-full text-xs font-medium min-w-[20px] text-center ${bgColor} ${textColor}`} data-testid={testId}>
+      {count}
+    </span>
+  );
+}
+
+function StatusBadge({ label, bgColor, textColor, showDot, dotColor, testId }: { 
+  label: string; 
+  bgColor: string; 
+  textColor: string;
+  showDot?: boolean;
+  dotColor?: string;
+  testId?: string;
+}) {
+  return (
+    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${bgColor} ${textColor}`} data-testid={testId}>
+      {showDot && <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`} />}
+      {label}
+    </span>
+  );
+}
+
+function PlanDisplay() {
+  return (
+    <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-md p-4 mb-4 flex flex-col gap-1.5" data-testid="display-plan">
+      <span className="text-base font-semibold text-amber-800 dark:text-amber-200">Plano Profissional</span>
+      <div className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
+        <CheckCircle className="w-4 h-4 text-emerald-500" />
+        <span>Ativo até 15/12/2025</span>
+      </div>
     </div>
   );
 }
 
 export default function SettingsContent() {
+  const [emailNotifications, setEmailNotifications] = useState(true);
+  const [theme, setTheme] = useState("claro");
+  const [language, setLanguage] = useState("portugues");
+  const [timezone, setTimezone] = useState("sao_paulo");
+
   return (
-    <div className="p-6 min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto">
+    <div className="h-full overflow-y-auto bg-gray-50 dark:bg-gray-900">
+      <div className="p-6 max-w-[800px] mx-auto">
         <div className="mb-8">
-          <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 tracking-tight" data-testid="text-settings-title">
+          <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 tracking-tight mb-2" data-testid="text-settings-title">
             Configurações
           </h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-            Gerencie as configurações da sua conta e preferências do sistema
+          <p className="text-sm text-gray-500 dark:text-gray-400" data-testid="text-settings-description">
+            Gerencie suas preferências e configurações do sistema
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col gap-6">
           <SettingsCard
             icon={<Building2 className="w-6 h-6 text-blue-500" />}
             iconBg="bg-blue-50 dark:bg-blue-500/20"
@@ -130,7 +175,7 @@ export default function SettingsContent() {
             <NavigationButton
               icon={<Users className="w-5 h-5" />}
               label="Usuários Ativos"
-              badge={<Badge variant="secondary" className="bg-blue-50 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300 text-xs">12</Badge>}
+              badge={<CounterBadge count={12} bgColor="bg-blue-50 dark:bg-blue-500/20" textColor="text-blue-700 dark:text-blue-300" testId="badge-users-count" />}
             />
             <NavigationButton
               icon={<Bell className="w-5 h-5" />}
@@ -139,136 +184,86 @@ export default function SettingsContent() {
           </SettingsCard>
 
           <SettingsCard
-            icon={<CreditCard className="w-6 h-6 text-amber-500" />}
-            iconBg="bg-amber-50 dark:bg-amber-500/20"
-            title="Assinatura e Plano"
-            description="Visualize e gerencie seu plano de assinatura"
-          >
-            <div className="p-4 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 rounded-md mb-3">
-              <div className="text-base font-semibold text-amber-800 dark:text-amber-300 mb-1" data-testid="text-plan-name">
-                Plano Profissional
-              </div>
-              <div className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                <span>Ativo até 15/12/2025</span>
-              </div>
-            </div>
-            <NavigationButton
-              icon={<CreditCard className="w-5 h-5" />}
-              label="Gerenciar Assinatura"
-            />
-            <NavigationButton
-              icon={<History className="w-5 h-5" />}
-              label="Histórico de Pagamentos"
-            />
-          </SettingsCard>
-
-          <SettingsCard
-            icon={<HelpCircle className="w-6 h-6 text-emerald-500" />}
-            iconBg="bg-emerald-50 dark:bg-emerald-500/20"
-            title="Suporte"
-            description="Entre em contato com nossa equipe de suporte"
-          >
-            <NavigationButton
-              icon={<HelpCircle className="w-5 h-5" />}
-              label="Central de Ajuda"
-              isExternal
-            />
-            <NavigationButton
-              icon={<Mail className="w-5 h-5" />}
-              label="Enviar Email"
-              badge={<span className="text-xs text-gray-500 dark:text-gray-400">suporte@empresa.com</span>}
-            />
-            <NavigationButton
-              icon={<MessageSquare className="w-5 h-5" />}
-              label="Chat ao Vivo"
-              badge={
-                <Badge variant="secondary" className="bg-emerald-50 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300 text-xs flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  Online
-                </Badge>
-              }
-            />
-          </SettingsCard>
-
-          <SettingsCard
             icon={<Sliders className="w-6 h-6 text-purple-500" />}
             iconBg="bg-purple-50 dark:bg-purple-500/20"
             title="Preferências"
             description="Personalize sua experiência no sistema"
-            className="md:col-span-2"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <SettingRow
-                icon={<Sun className="w-5 h-5" />}
-                label="Tema da Interface"
-                control={
-                  <Select defaultValue="light">
-                    <SelectTrigger className="min-w-[140px] h-11" data-testid="select-theme">
-                      <SelectValue placeholder="Selecione" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="light">Claro</SelectItem>
-                      <SelectItem value="dark">Escuro</SelectItem>
-                      <SelectItem value="system">Sistema</SelectItem>
-                    </SelectContent>
-                  </Select>
-                }
-              />
-              <SettingRow
-                icon={<Globe className="w-5 h-5" />}
-                label="Idioma"
-                control={
-                  <Select defaultValue="pt-BR">
-                    <SelectTrigger className="min-w-[140px] h-11" data-testid="select-language">
-                      <SelectValue placeholder="Selecione" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="pt-BR">Português</SelectItem>
-                      <SelectItem value="en-US">English</SelectItem>
-                      <SelectItem value="es">Español</SelectItem>
-                    </SelectContent>
-                  </Select>
-                }
-              />
-              <SettingRow
-                icon={<Clock className="w-5 h-5" />}
-                label="Fuso Horário"
-                control={
-                  <Select defaultValue="america-sp">
-                    <SelectTrigger className="min-w-[140px] h-11" data-testid="select-timezone">
-                      <SelectValue placeholder="Selecione" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="america-sp">America/Sao_Paulo</SelectItem>
-                      <SelectItem value="america-ny">America/New_York</SelectItem>
-                      <SelectItem value="europe-london">Europe/London</SelectItem>
-                    </SelectContent>
-                  </Select>
-                }
-              />
-              <SettingRow
-                icon={<Mail className="w-5 h-5" />}
-                label="Notificações por Email"
-                control={<Switch data-testid="switch-email-notifications" defaultChecked />}
-              />
-            </div>
+            <SettingRow
+              icon={<Sun className="w-5 h-5" />}
+              label="Tema da Interface"
+              control={
+                <Select value={theme} onValueChange={setTheme}>
+                  <SelectTrigger className="h-9 min-w-[140px] text-sm" data-testid="select-theme">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="claro">Claro</SelectItem>
+                    <SelectItem value="escuro">Escuro</SelectItem>
+                    <SelectItem value="auto">Auto</SelectItem>
+                  </SelectContent>
+                </Select>
+              }
+            />
+            <SettingRow
+              icon={<Globe className="w-5 h-5" />}
+              label="Idioma"
+              control={
+                <Select value={language} onValueChange={setLanguage}>
+                  <SelectTrigger className="h-9 min-w-[140px] text-sm" data-testid="select-language">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="portugues">Português</SelectItem>
+                    <SelectItem value="english">English</SelectItem>
+                    <SelectItem value="espanol">Español</SelectItem>
+                  </SelectContent>
+                </Select>
+              }
+            />
+            <SettingRow
+              icon={<Clock className="w-5 h-5" />}
+              label="Fuso Horário"
+              control={
+                <Select value={timezone} onValueChange={setTimezone}>
+                  <SelectTrigger className="h-9 min-w-[140px] text-sm" data-testid="select-timezone">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="sao_paulo">America/São_Paulo</SelectItem>
+                    <SelectItem value="new_york">America/New_York</SelectItem>
+                  </SelectContent>
+                </Select>
+              }
+            />
+            <SettingRow
+              icon={<Mail className="w-5 h-5" />}
+              label="Notificações por Email"
+              control={
+                <Switch
+                  checked={emailNotifications}
+                  onCheckedChange={setEmailNotifications}
+                  className="w-11 h-6 data-[state=checked]:bg-emerald-500"
+                  data-testid="toggle-email-notifications"
+                />
+              }
+            />
           </SettingsCard>
 
           <SettingsCard
             icon={<Shield className="w-6 h-6 text-red-500" />}
             iconBg="bg-red-50 dark:bg-red-500/20"
             title="Segurança"
-            description="Proteja sua conta e dados"
+            description="Proteja sua conta e gerencie acessos"
           >
             <NavigationButton
-              icon={<Shield className="w-5 h-5" />}
+              icon={<Key className="w-5 h-5" />}
               label="Alterar Senha"
             />
             <NavigationButton
-              icon={<Shield className="w-5 h-5" />}
+              icon={<Smartphone className="w-5 h-5" />}
               label="Autenticação em Duas Etapas"
-              badge={<Badge variant="secondary" className="bg-red-50 text-red-700 dark:bg-red-500/20 dark:text-red-300 text-xs">Desativado</Badge>}
+              badge={<StatusBadge label="Desativado" bgColor="bg-red-50 dark:bg-red-500/20" textColor="text-red-700 dark:text-red-300" testId="badge-2fa-status" />}
             />
             <NavigationButton
               icon={<History className="w-5 h-5" />}
@@ -277,24 +272,44 @@ export default function SettingsContent() {
           </SettingsCard>
 
           <SettingsCard
-            icon={<Plug className="w-6 h-6 text-indigo-500" />}
-            iconBg="bg-indigo-50 dark:bg-indigo-500/20"
-            title="Integrações"
-            description="Conecte com outros serviços e ferramentas"
+            icon={<CreditCard className="w-6 h-6 text-amber-500" />}
+            iconBg="bg-amber-50 dark:bg-amber-500/20"
+            title="Assinatura e Plano"
+            description="Gerencie seu plano e informações de pagamento"
           >
+            <PlanDisplay />
             <NavigationButton
-              icon={<Plug className="w-5 h-5" />}
-              label="APIs Conectadas"
-              badge={<Badge variant="secondary" className="bg-indigo-50 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300 text-xs">3</Badge>}
+              icon={<CreditCard className="w-5 h-5" />}
+              label="Gerenciar Assinatura"
             />
             <NavigationButton
-              icon={<FileText className="w-5 h-5" />}
-              label="Documentação da API"
+              icon={<Receipt className="w-5 h-5" />}
+              label="Histórico de Pagamentos"
+            />
+          </SettingsCard>
+
+          <SettingsCard
+            icon={<HelpCircle className="w-6 h-6 text-emerald-500" />}
+            iconBg="bg-emerald-50 dark:bg-emerald-500/20"
+            title="Suporte"
+            description="Obtenha ajuda e entre em contato conosco"
+          >
+            <NavigationButton
+              icon={<HelpCircle className="w-5 h-5" />}
+              label="Central de Ajuda"
               isExternal
             />
             <NavigationButton
-              icon={<History className="w-5 h-5" />}
-              label="Logs de Integração"
+              icon={<Mail className="w-5 h-5" />}
+              label="Suporte por Email"
+            />
+            <div className="text-xs text-gray-500 dark:text-gray-400 pl-4 -mt-1 mb-1">
+              suporte@empresa.com.br
+            </div>
+            <NavigationButton
+              icon={<MessageCircle className="w-5 h-5" />}
+              label="Chat ao Vivo"
+              badge={<StatusBadge label="Online" bgColor="bg-emerald-50 dark:bg-emerald-500/20" textColor="text-emerald-700 dark:text-emerald-300" showDot dotColor="bg-emerald-500" testId="badge-chat-status" />}
             />
           </SettingsCard>
         </div>
