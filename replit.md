@@ -10,6 +10,23 @@ The project is branded as "OAK University" and follows a professional academic a
 
 ## Recent Changes
 
+### Quotes Section Implementation (December 2025)
+- Created QuotesContent component accessible via "Calculadora" sidebar button
+- Follows design.json design system guidelines for premium fintech aesthetic
+- Features include:
+  - Header with title "Orçamentos" and "Novo Orçamento" primary action button
+  - Tabs for "Pendentes" (Aberto, Em Análise) and "Concluídos" (Aprovado, Concluído, Cancelado)
+  - Status badges with semantic colors per design system
+  - Data table with responsive horizontal scrolling (overflow-x-auto)
+  - Functional pagination with page size of 5 items
+  - Selection bar for bulk actions (print, export, delete)
+  - Search functionality by quote number or client name
+  - Row action dropdown menu (view, duplicate, print, export PDF, delete)
+  - Empty state handling
+  - Full dark mode support
+- All interactive elements include data-testid attributes for testing
+- Portuguese language labels throughout
+
 ### Clients Section Implementation (November 2025)
 - Added Client data model to shared/schema.ts with fields: id, name, email, phone, document, personType (fisica/juridica), status, avatarUrl, createdAt
 - Created ClientsContent component with:

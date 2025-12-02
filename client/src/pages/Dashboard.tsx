@@ -3,6 +3,7 @@ import UniversitySidebar from "@/components/UniversitySidebar";
 import DashboardContent from "@/components/DashboardContent";
 import ClientsContent from "@/components/ClientsContent";
 import ServiceOrdersContent from "@/components/ServiceOrdersContent";
+import QuotesContent from "@/components/QuotesContent";
 
 export default function Dashboard() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -22,6 +23,8 @@ export default function Dashboard() {
         return <ClientsContent />;
       case "document":
         return <ServiceOrdersContent />;
+      case "calculator":
+        return <QuotesContent />;
       case "home":
       default:
         return <DashboardContent />;
