@@ -10,6 +10,26 @@ The project is branded as "OAK University" and follows a professional academic a
 
 ## Recent Changes
 
+### Calendar Section Implementation (December 2025)
+- Created CalendarContent component accessible via "Agenda" sidebar button
+- Follows design.json design system with premium fintech aesthetic
+- Features include:
+  - Month view calendar with 7-day grid and 6 weeks display
+  - Navigation controls (previous/next month, today button, refresh)
+  - View dropdown for switching between Day/Week/Month/List views
+  - Color-coded event categories matching exact design system hex values:
+    - Regular (gray), One-on-One (red), Team Meeting (blue)
+    - Work Session (indigo), Social (green), Important (amber), Presentation (pink)
+  - Event chips with left border accent color and hover animations
+  - Event popover on click showing category badge, time, location, description
+  - Add Event dialog with form for title, category, time, location, description
+  - Today indicator with dark circular highlight
+  - Search functionality for filtering events
+  - Days from other months shown with muted styling
+- Full dark mode support
+- All interactive elements include data-testid attributes for testing
+- Portuguese language labels throughout (Calendario, Adicionar Evento, etc.)
+
 ### Settings Section Implementation v2.0 (December 2025)
 - Completely redesigned SettingsContent component following design.json v2.0 specifications
 - Vertical stacked layout with single column (max-width 800px) for improved readability
