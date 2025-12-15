@@ -5,6 +5,7 @@ import ClientsContent from "@/components/ClientsContent";
 import ServiceOrdersContent from "@/components/ServiceOrdersContent";
 import QuotesContent from "@/components/QuotesContent";
 import SettingsContent from "@/components/SettingsContent";
+import CalendarContent from "@/components/CalendarContent";
 
 export default function Dashboard() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -20,6 +21,8 @@ export default function Dashboard() {
 
   const renderContent = () => {
     switch (activeView) {
+      case "calendar":
+        return <CalendarContent />;
       case "users":
         return <ClientsContent />;
       case "document":

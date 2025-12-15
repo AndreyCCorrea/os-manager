@@ -1,0 +1,802 @@
+{
+  "designSystem": {
+    "name": "Dashboard Calendário - Design System",
+    "version": "1.0",
+    "description": "Sistema de design para calendário de eventos com múltiplas visualizações, grid limpo e código de cores por categoria",
+    "scope": "Main content area only - sidebar já está finalizada"
+  },
+
+  "designPrinciples": {
+    "clarity": "Interface limpa que prioriza legibilidade dos eventos e navegação intuitiva",
+    "density": "Densidade informacional balanceada - mostrar máximo de eventos sem poluir",
+    "colorCoding": "Sistema de cores consistente para categorização rápida de eventos",
+    "flexibility": "Múltiplas visualizações para diferentes necessidades (mês, semana, dia, lista)",
+    "interaction": "Interações naturais - click para criar, drag para mover, hover para preview",
+    "whitespace": "Uso generoso de espaço em branco para separar dias e eventos"
+  },
+
+  "colorPalette": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F8F9FA",
+      "grid": "#F8F9FA",
+      "dayCell": "#FFFFFF",
+      "description": "Backgrounds claros que não competem com eventos coloridos"
+    },
+    "text": {
+      "primary": "#1F2937",
+      "secondary": "#374151",
+      "tertiary": "#6B7280",
+      "muted": "#9CA3AF",
+      "onDark": "#FFFFFF",
+      "description": "Hierarquia de texto clara"
+    },
+    "borders": {
+      "grid": "#E5E7EB",
+      "subtle": "#F3F4F6",
+      "default": "#E5E7EB",
+      "strong": "#D1D5DB",
+      "description": "Bordas de grid suaves que organizam sem dominar"
+    },
+    "interactive": {
+      "primary": "#1F2937",
+      "primaryHover": "#111827",
+      "secondary": "#3B82F6",
+      "secondaryHover": "#2563EB",
+      "description": "Botão primário escuro, secundário azul"
+    },
+    "today": {
+      "indicator": "#1F2937",
+      "text": "#FFFFFF",
+      "description": "Indicador circular escuro para o dia atual"
+    },
+    "eventCategories": {
+      "regular": {
+        "background": "#F3F4F6",
+        "text": "#374151",
+        "border": "#9CA3AF",
+        "description": "Cinza - Standups, reuniões regulares"
+      },
+      "oneOnOne": {
+        "background": "#FEE2E2",
+        "text": "#991B1B",
+        "border": "#DC2626",
+        "description": "Vermelho suave - Conversas 1:1"
+      },
+      "teamMeeting": {
+        "background": "#DBEAFE",
+        "text": "#1E40AF",
+        "border": "#3B82F6",
+        "description": "Azul - Reuniões de equipe"
+      },
+      "workSession": {
+        "background": "#E0E7FF",
+        "text": "#3730A3",
+        "border": "#6366F1",
+        "description": "Índigo - Sessões de trabalho profundo"
+      },
+      "social": {
+        "background": "#D1FAE5",
+        "text": "#065F46",
+        "border": "#10B981",
+        "description": "Verde - Almoços, eventos sociais"
+      },
+      "important": {
+        "background": "#FEF3C7",
+        "text": "#92400E",
+        "border": "#F59E0B",
+        "description": "Âmbar - Eventos importantes, deadlines"
+      },
+      "presentation": {
+        "background": "#FCE7F3",
+        "text": "#831843",
+        "border": "#DB2777",
+        "description": "Rosa - Demos, apresentações"
+      }
+    },
+    "states": {
+      "hover": "#F9FAFB",
+      "selected": "#EFF6FF",
+      "focus": "#3B82F6",
+      "disabled": "#F3F4F6",
+      "description": "Estados de interação"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "primary": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      "description": "System fonts para performance e consistência"
+    },
+    "scale": {
+      "h1": {
+        "size": "24px",
+        "weight": "600",
+        "lineHeight": "32px",
+        "letterSpacing": "-0.02em",
+        "usage": "Título da página (Calendar)",
+        "color": "#1F2937"
+      },
+      "monthDisplay": {
+        "size": "18px",
+        "weight": "600",
+        "lineHeight": "24px",
+        "letterSpacing": "-0.01em",
+        "usage": "Mês/ano atual (January 2025)",
+        "color": "#1F2937"
+      },
+      "dateRange": {
+        "size": "13px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "letterSpacing": "0",
+        "usage": "Range de datas (Jan 1 - Jan 31)",
+        "color": "#6B7280"
+      },
+      "weekdayHeader": {
+        "size": "12px",
+        "weight": "500",
+        "lineHeight": "16px",
+        "letterSpacing": "0.05em",
+        "usage": "Cabeçalhos dos dias (MON, TUES)",
+        "color": "#6B7280",
+        "transform": "uppercase"
+      },
+      "dayNumber": {
+        "size": "14px",
+        "weight": "500",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Número do dia no calendário",
+        "color": "#1F2937"
+      },
+      "dayNumberOtherMonth": {
+        "size": "14px",
+        "weight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Dias de outros meses",
+        "color": "#9CA3AF"
+      },
+      "eventTitle": {
+        "size": "12px",
+        "weight": "500",
+        "lineHeight": "16px",
+        "letterSpacing": "0",
+        "usage": "Título do evento no calendário",
+        "truncate": true
+      },
+      "eventTime": {
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "16px",
+        "letterSpacing": "0",
+        "usage": "Horário do evento",
+        "opacity": "0.8"
+      },
+      "timeSlot": {
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "16px",
+        "letterSpacing": "0",
+        "usage": "Slots de hora na week/day view",
+        "color": "#6B7280"
+      },
+      "buttonLabel": {
+        "size": "14px",
+        "weight": "500",
+        "lineHeight": "20px",
+        "letterSpacing": "0",
+        "usage": "Labels de botões",
+        "color": "#374151"
+      },
+      "moreIndicator": {
+        "size": "11px",
+        "weight": "400",
+        "lineHeight": "16px",
+        "letterSpacing": "0",
+        "usage": "Indicador '3 more...'",
+        "color": "#6B7280"
+      }
+    }
+  },
+
+  "spacing": {
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "16px",
+      "xl": "24px",
+      "2xl": "32px",
+      "3xl": "48px",
+      "description": "Escala base de espaçamento"
+    },
+    "layout": {
+      "pageContentPadding": "24px",
+      "headerMarginBottom": "24px",
+      "controlsMarginBottom": "16px",
+      "description": "Espaçamentos de layout principal"
+    },
+    "calendar": {
+      "gridGap": "1px",
+      "dayCellPadding": "8px",
+      "dayCellMinHeight": "120px",
+      "eventGap": "4px",
+      "eventPadding": "4px 8px",
+      "description": "Espaçamentos específicos do calendário"
+    },
+    "controls": {
+      "buttonHeight": "36px",
+      "buttonGap": "8px",
+      "controlsGap": "12px",
+      "description": "Espaçamentos dos controles"
+    }
+  },
+
+  "layout": {
+    "mainContent": {
+      "note": "SIDEBAR JÁ ESTÁ PRONTA - Foco apenas no main content",
+      "background": "#F8F9FA",
+      "description": "Área de conteúdo principal"
+    },
+    "header": {
+      "display": "flex",
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "padding": "24px 24px 0 24px",
+      "marginBottom": "24px",
+      "description": "Header com título e busca"
+    },
+    "controls": {
+      "display": "flex",
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "padding": "0 24px 16px 24px",
+      "borderBottom": "1px solid #E5E7EB",
+      "description": "Barra de controles de navegação"
+    },
+    "calendarGrid": {
+      "padding": "24px",
+      "background": "#FFFFFF",
+      "description": "Container do grid do calendário"
+    }
+  },
+
+  "components": {
+    "searchInput": {
+      "width": "240px",
+      "height": "40px",
+      "padding": "0 12px 0 40px",
+      "background": "#FFFFFF",
+      "border": "1px solid #E5E7EB",
+      "borderRadius": "6px",
+      "fontSize": "14px",
+      "placeholder": "Search",
+      "icon": {
+        "name": "Search",
+        "position": "absolute",
+        "left": "12px",
+        "size": "20px",
+        "color": "#9CA3AF"
+      },
+      "focus": {
+        "border": "#3B82F6",
+        "ring": "0 0 0 3px rgba(59, 130, 246, 0.1)"
+      },
+      "description": "Campo de busca no header"
+    },
+
+    "navigationButton": {
+      "iconButton": {
+        "size": "36px",
+        "background": "#FFFFFF",
+        "backgroundHover": "#F9FAFB",
+        "border": "1px solid #E5E7EB",
+        "borderRadius": "6px",
+        "iconSize": "18px",
+        "iconColor": "#6B7280",
+        "description": "Botões de navegação (prev, next, refresh)"
+      },
+      "textButton": {
+        "height": "36px",
+        "padding": "0 16px",
+        "background": "#FFFFFF",
+        "backgroundHover": "#F9FAFB",
+        "border": "1px solid #E5E7EB",
+        "borderRadius": "6px",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "color": "#374151",
+        "description": "Botão 'Today'"
+      }
+    },
+
+    "viewDropdown": {
+      "height": "36px",
+      "padding": "0 12px",
+      "background": "#FFFFFF",
+      "border": "1px solid #E5E7EB",
+      "borderRadius": "6px",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "color": "#374151",
+      "chevronSize": "16px",
+      "chevronMargin": "8px",
+      "options": [
+        "Day view",
+        "Week view",
+        "Month view",
+        "List view"
+      ],
+      "description": "Dropdown de seleção de visualização"
+    },
+
+    "addEventButton": {
+      "height": "36px",
+      "padding": "0 16px",
+      "background": "#1F2937",
+      "backgroundHover": "#111827",
+      "borderRadius": "6px",
+      "color": "#FFFFFF",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "icon": {
+        "name": "Plus",
+        "size": "18px",
+        "marginRight": "8px"
+      },
+      "description": "Botão principal de adicionar evento"
+    },
+
+    "calendarGrid": {
+      "weekdayHeader": {
+        "display": "grid",
+        "gridTemplateColumns": "repeat(7, 1fr)",
+        "borderBottom": "1px solid #E5E7EB",
+        "marginBottom": "1px"
+      },
+      "headerCell": {
+        "padding": "12px",
+        "textAlign": "center",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "color": "#6B7280",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.05em"
+      },
+      "body": {
+        "display": "grid",
+        "gridTemplateColumns": "repeat(7, 1fr)",
+        "gridAutoRows": "minmax(120px, auto)",
+        "gap": "1px",
+        "background": "#E5E7EB"
+      },
+      "description": "Estrutura do grid do calendário"
+    },
+
+    "dayCell": {
+      "base": {
+        "background": "#FFFFFF",
+        "backgroundHover": "#F9FAFB",
+        "padding": "8px",
+        "display": "flex",
+        "flexDirection": "column",
+        "minHeight": "120px",
+        "cursor": "pointer",
+        "transition": "background 150ms ease"
+      },
+      "dayNumber": {
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "color": "#1F2937",
+        "marginBottom": "8px",
+        "textAlign": "right"
+      },
+      "dayNumberOtherMonth": {
+        "color": "#9CA3AF",
+        "fontWeight": "400"
+      },
+      "todayIndicator": {
+        "background": "#1F2937",
+        "color": "#FFFFFF",
+        "width": "28px",
+        "height": "28px",
+        "borderRadius": "50%",
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "marginLeft": "auto"
+      },
+      "eventsContainer": {
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "4px",
+        "overflow": "hidden"
+      },
+      "description": "Célula de dia no calendário"
+    },
+
+    "eventItem": {
+      "base": {
+        "padding": "4px 8px",
+        "borderRadius": "4px",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "whiteSpace": "nowrap",
+        "overflow": "hidden",
+        "textOverflow": "ellipsis",
+        "cursor": "pointer",
+        "transition": "all 150ms ease",
+        "borderLeftWidth": "3px",
+        "borderLeftStyle": "solid"
+      },
+      "hover": {
+        "transform": "translateX(2px)",
+        "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)"
+      },
+      "time": {
+        "fontWeight": "400",
+        "marginLeft": "4px",
+        "opacity": "0.8"
+      },
+      "description": "Item de evento individual"
+    },
+
+    "moreEventsIndicator": {
+      "fontSize": "11px",
+      "color": "#6B7280",
+      "padding": "4px 8px",
+      "cursor": "pointer",
+      "hoverColor": "#3B82F6",
+      "description": "Indicador de mais eventos ocultos"
+    },
+
+    "weekView": {
+      "grid": {
+        "display": "grid",
+        "gridTemplateColumns": "80px repeat(7, 1fr)",
+        "background": "#FFFFFF",
+        "padding": "24px"
+      },
+      "timeColumn": {
+        "display": "flex",
+        "flexDirection": "column"
+      },
+      "timeSlot": {
+        "height": "60px",
+        "padding": "8px",
+        "fontSize": "12px",
+        "color": "#6B7280",
+        "textAlign": "right",
+        "borderTop": "1px solid #F3F4F6"
+      },
+      "dayColumn": {
+        "borderLeft": "1px solid #E5E7EB",
+        "position": "relative"
+      },
+      "eventBlock": {
+        "position": "absolute",
+        "left": "4px",
+        "right": "4px",
+        "borderRadius": "4px",
+        "padding": "8px",
+        "fontSize": "13px",
+        "cursor": "pointer",
+        "boxShadow": "0 1px 3px rgba(0, 0, 0, 0.1)"
+      },
+      "description": "Estrutura da visualização de semana"
+    },
+
+    "listView": {
+      "container": {
+        "padding": "24px",
+        "background": "#FFFFFF"
+      },
+      "dateGroup": {
+        "marginBottom": "32px"
+      },
+      "dateHeader": {
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "#1F2937",
+        "marginBottom": "12px",
+        "paddingBottom": "8px",
+        "borderBottom": "2px solid #E5E7EB"
+      },
+      "eventListItem": {
+        "display": "flex",
+        "alignItems": "center",
+        "padding": "12px",
+        "borderRadius": "6px",
+        "backgroundHover": "#F9FAFB",
+        "cursor": "pointer",
+        "marginBottom": "8px",
+        "gap": "16px"
+      },
+      "timeBadge": {
+        "minWidth": "80px",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "color": "#6B7280"
+      },
+      "eventIndicator": {
+        "width": "4px",
+        "height": "40px",
+        "borderRadius": "2px"
+      },
+      "eventDetails": {
+        "flex": "1"
+      },
+      "eventTitle": {
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "color": "#1F2937",
+        "marginBottom": "4px"
+      },
+      "eventMeta": {
+        "fontSize": "13px",
+        "color": "#6B7280",
+        "display": "flex",
+        "gap": "12px"
+      },
+      "description": "Estrutura da visualização de lista"
+    },
+
+    "eventPopover": {
+      "position": "absolute",
+      "background": "#FFFFFF",
+      "border": "1px solid #E5E7EB",
+      "borderRadius": "8px",
+      "padding": "12px",
+      "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      "zIndex": "50",
+      "minWidth": "240px",
+      "maxWidth": "320px",
+      "description": "Popover de preview do evento no hover"
+    }
+  },
+
+  "interactions": {
+    "transitions": {
+      "fast": "100ms ease",
+      "default": "150ms ease",
+      "slow": "200ms ease",
+      "description": "Durações de transição"
+    },
+    "hover": {
+      "dayCell": {
+        "background": "#F9FAFB",
+        "description": "Hover sutil na célula do dia"
+      },
+      "event": {
+        "transform": "translateX(2px)",
+        "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "description": "Evento se move levemente para direita"
+      },
+      "button": {
+        "background": "#F9FAFB",
+        "description": "Background change em botões"
+      }
+    },
+    "click": {
+      "dayCell": "Abre modal de criação de evento com data pré-preenchida",
+      "event": "Abre modal/sidebar com detalhes do evento",
+      "description": "Comportamentos de click"
+    },
+    "drag": {
+      "event": "Permite arrastar evento para outro dia/horário",
+      "cursor": "move",
+      "opacity": "0.8",
+      "description": "Drag and drop de eventos"
+    },
+    "focus": {
+      "outline": "2px solid #3B82F6",
+      "outlineOffset": "2px",
+      "description": "Estados de foco para acessibilidade"
+    }
+  },
+
+  "patterns": {
+    "eventDisplay": {
+      "monthView": {
+        "format": "Title • Time",
+        "maxVisible": 3,
+        "overflow": "X more...",
+        "description": "Formato compacto para visão mensal"
+      },
+      "weekView": {
+        "format": "Title on first line, details below",
+        "timeBlocks": true,
+        "description": "Blocos de tempo proporcionais na semana"
+      },
+      "dayView": {
+        "format": "Full event details with description",
+        "expandable": true,
+        "description": "Detalhes completos na visão diária"
+      },
+      "listView": {
+        "format": "Time | Indicator | Title + Meta",
+        "grouping": "By date",
+        "description": "Lista cronológica com agrupamento por data"
+      }
+    },
+
+    "colorUsage": {
+      "consistency": "Sempre usar a mesma cor para a mesma categoria",
+      "contrast": "Garantir legibilidade do texto sobre backgrounds coloridos",
+      "accessibility": "Não depender apenas de cor, usar também ícones e texto",
+      "description": "Regras de uso do sistema de cores"
+    },
+
+    "emptyState": {
+      "icon": {
+        "name": "Calendar",
+        "size": "64px",
+        "color": "#D1D5DB"
+      },
+      "title": "Nenhum evento agendado",
+      "description": "Comece adicionando seu primeiro evento",
+      "action": "Botão 'Adicionar Evento'",
+      "centered": true,
+      "padding": "64px 24px",
+      "description": "Estado vazio do calendário"
+    },
+
+    "loadingState": {
+      "skeleton": {
+        "background": "#F1F3F5",
+        "animation": "pulse 2s infinite",
+        "borderRadius": "4px"
+      },
+      "gridSkeleton": "Mostra estrutura do grid com células pulsantes",
+      "description": "Estado de carregamento"
+    },
+
+    "todayHighlight": {
+      "indicator": "Círculo escuro com número branco",
+      "cellBorder": "Opcional: border sutil no dia atual",
+      "emphasis": "Indicador claro mas não dominante",
+      "description": "Como destacar o dia atual"
+    }
+  },
+
+  "accessibility": {
+    "contrast": {
+      "minimumRatio": "4.5:1",
+      "eventText": "Garantir contraste entre texto e background do evento",
+      "description": "WCAG 2.1 Level AA compliance"
+    },
+    "keyboard": {
+      "navigation": "Arrow keys para navegar entre dias",
+      "selection": "Enter para selecionar dia/evento",
+      "viewSwitch": "Tab para navegar entre controles",
+      "shortcuts": {
+        "today": "T",
+        "next": "N or Arrow Right",
+        "previous": "P or Arrow Left",
+        "addEvent": "C"
+      },
+      "description": "Navegação completa por teclado"
+    },
+    "screenReader": {
+      "dayCell": "Anunciar dia, número de eventos",
+      "event": "Anunciar título, horário, categoria",
+      "navigation": "Anunciar mudanças de mês/semana",
+      "description": "Suporte para leitores de tela"
+    },
+    "touchTargets": {
+      "minimumSize": "36x36px",
+      "eventMinHeight": "28px",
+      "description": "Alvos de toque adequados para mobile"
+    }
+  },
+
+  "responsive": {
+    "mobile": {
+      "breakpoint": "0-640px",
+      "defaultView": "List",
+      "hideViews": ["Week"],
+      "stackControls": true,
+      "searchFullWidth": true,
+      "dayCellMinHeight": "80px",
+      "fontSize": "Slightly smaller",
+      "description": "Mobile: prioriza lista, reduz densidade"
+    },
+    "tablet": {
+      "breakpoint": "641-1024px",
+      "defaultView": "Month",
+      "availableViews": ["Day", "Month", "List"],
+      "horizontalScroll": "Para week view se necessário",
+      "description": "Tablet: mantém month view com ajustes"
+    },
+    "desktop": {
+      "breakpoint": "1025px+",
+      "allViews": true,
+      "optimalView": "Month",
+      "fullFeatures": true,
+      "description": "Desktop: todas as funcionalidades"
+    }
+  },
+
+  "viewSpecifications": {
+    "monthView": {
+      "purpose": "Visão geral e planejamento de longo prazo",
+      "shows": "4-6 semanas completas",
+      "gridColumns": 7,
+      "gridRows": "5-6 (dinâmico)",
+      "eventDisplay": "Truncated com overflow indicator",
+      "interaction": "Click para criar, hover para preview",
+      "bestFor": "Overview mensal, identificar padrões"
+    },
+    "weekView": {
+      "purpose": "Agendamento detalhado da semana",
+      "shows": "7 dias com slots horários",
+      "timeRange": "00:00 - 23:59 (customizável)",
+      "timeSlotHeight": "60px",
+      "eventDisplay": "Blocos de tempo proporcionais",
+      "interaction": "Drag para mover, resize para ajustar duração",
+      "bestFor": "Gestão detalhada de horários"
+    },
+    "dayView": {
+      "purpose": "Foco em um único dia",
+      "shows": "1 dia com slots horários detalhados",
+      "timeRange": "6am - 10pm (customizável)",
+      "timeSlotHeight": "60px",
+      "eventDisplay": "Detalhes completos com descrição",
+      "interaction": "Máxima interatividade e edição",
+      "bestFor": "Visualização detalhada de um dia específico"
+    },
+    "listView": {
+      "purpose": "Visualização cronológica e impressão",
+      "shows": "Lista de eventos ordenados por data",
+      "grouping": "Por data",
+      "eventDisplay": "Uma linha por evento com metadados",
+      "interaction": "Click para detalhes, simples e direto",
+      "bestFor": "Busca, revisão cronológica, impressão"
+    }
+  },
+
+  "eventCategories": {
+    "categorization": {
+      "method": "Por tipo de atividade",
+      "userCustomizable": true,
+      "defaultCategories": [
+        "Regular/Standup",
+        "One-on-one",
+        "Team Meeting",
+        "Work Session",
+        "Social/Lunch",
+        "Important/Deadline",
+        "Presentation/Demo"
+      ]
+    },
+    "visualDifferentiation": {
+      "color": "Background + text color",
+      "border": "Left border de 3px na cor da categoria",
+      "icon": "Opcional para categorias específicas",
+      "description": "Múltiplas camadas de diferenciação visual"
+    }
+  },
+
+  "implementationNotes": {
+    "library": "Consider using react-big-calendar or FullCalendar with custom styling",
+    "dateLibrary": "date-fns or dayjs for date manipulation",
+    "dragDrop": "react-dnd or native HTML5 drag and drop",
+    "stateManagement": "React Context or Zustand for calendar state",
+    "dataStructure": {
+      "event": {
+        "id": "string",
+        "title": "string",
+        "start": "Date",
+        "end": "Date",
+        "category": "string",
+        "description": "string (optional)",
+        "location": "string (optional)",
+        "attendees": "array (optional)"
+      }
+    },
+    "performance": "Virtualize week/day views para performance com muitos eventos",
+    "persistence": "Auto-save changes, optimistic updates"
+  }
+}
